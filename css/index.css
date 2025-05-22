@@ -263,7 +263,7 @@
 .temas_container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 135px 20px;
 }
 
 /* Header styles */
@@ -302,6 +302,7 @@
 
 .topic-card:hover {
     transform: translateY(-5px);
+    cursor: pointer;
 }
 
 .card-image {
@@ -322,7 +323,7 @@
 
 .category {
     font-size: 0.85rem;
-    color: #8a8a8a;
+    color: #ACACAC;
     margin-bottom: 4px;
 }
 
@@ -358,7 +359,7 @@
 .tutors {
     display: flex;
     align-items: center;
-    color: #8a8a8a;
+    color: #ACACAC;
     font-size: 0.9rem;
 }
 
@@ -375,9 +376,10 @@
     font-size: 0.85rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    font-size: 20px
 }
 
-.btn:hover {
+.temas_btn:hover {
     background-color: #99a07d;
 }
 
@@ -391,3 +393,8 @@
         font-size: 2rem;
     }
 }
+
+.pub {
+        background-color: #D3D6C5;
+        line-height: 1.6;
+    }
