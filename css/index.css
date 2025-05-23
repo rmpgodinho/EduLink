@@ -37,6 +37,10 @@
       position: absolute;
       z-index: 0;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      margin: 100px 0 0 350px;
+
     }
 
     .header{
@@ -394,7 +398,278 @@
     }
 }
 
-.pub {
-        background-color: #D3D6C5;
-        line-height: 1.6;
+.pub{
+  background-color: #D3D6C5;
+  line-height: 1.6;
+}
+
+.background-icons_pub {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 0 300px;
+}
+
+.content_pub {
+    display: flex;
+    height: 708px;
+    gap: 150px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.illustration_pub {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.illustration_pub img {
+    width: 100%;
+    height: auto;
+    margin-left: -80px;
+}
+
+.text-content_pub {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-content_pub h1 {
+    font-size: 69px;
+    font-weight: 800;
+    color: #2C4066;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.feature_pub {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.feature-icon_pub {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon_pub img {
+    width: 100%;
+    height: auto;
+}
+
+.feature-text_pub h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #2E3B46;
+}
+
+.feature-text_pub p {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #2E3B46;
+}
+
+@media (max-width: 768px) {
+    .content_pub {
+        flex-direction: column;
+        text-align: center;
     }
+
+    .feature_pub {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-content_pub h1 {
+        font-size: 32px;
+    }
+}
+
+.container_section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tutors Section */
+.title_nossosTutores{
+    font-size: 50px;
+    color: #2E3B46;
+    font-weight: 600;
+    text-align: center;
+    margin: 95px 0;
+}
+
+.tutors-grid, .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.tutor-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutor-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tutor-info {
+    padding: 10px;
+}
+
+.tutor-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.tutor-title {
+    font-size: 16px;
+    color: #868686;
+    margin-bottom: 15px;
+}
+
+.tutor-description {
+    font-size: 18px;
+    color: #ACACAC;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #C2C2C2;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination-dot.active {
+    background-color: #AAB18E;
+}
+
+ /* Testimonials Section */
+
+.title_opinion{
+  font-size: 40px;
+  color: #2E3B46;
+  font-weight: 600;
+  text-align: center;
+  margin: 70px 0;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #ACACAC;
+    font-size: 19px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #353535;
+}
+
+/* About Section */
+
+.title_about{
+  font-size: 40px;
+  color: #2E3B46;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.about-section {
+  text-align: justify;
+    max-width: 1553px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #8A8A8A;
+}
+
+/* Team Section */
+
+.title_team{
+  font-size: 40px;
+  color: #2E3B46;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    object-fit: cover;
+}
+
+.team-name {
+    color: #8A8A8A;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.team-grid{
+  display: flex;
+  flex-direction: row ;
+  justify-content: center;
+  align-items: center;
+  gap: 95px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #D3D6C5;
+  color: #2E3B46;
+  font-size: 15px;
+  margin-top: 118px;
+}
