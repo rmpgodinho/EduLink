@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Tutoria</title>
+  <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+    <section class="header">
+        <!-- Background Elements -->
+        <div class="bg-elements">
+            <img src="images/Group 327.svg" alt="Background">
+        </div>
+
+    <!-- Header -->
+        <header>
+            <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/image-removebg-preview 6.svg" alt="Logo">
+                </div>
+            </div>
+
+            <div class="nav-container">
+                <div class="search-icon">
+                    <img src="images/Vector.svg" alt="Lupa">
+                </div>
+                <nav>
+                <a href="#">Início</a>
+                <a href="#">Tutores</a>
+                <a href="#">Alunos</a>
+                <a href="#">Sobre nós</a>
+                <a href="#">Equipa</a>
+                <a href="#">Queres ser tutor?</a>
+                </nav>
+                <img src="images/icon.svg" alt="Profile">
+            </div>
+            </div>
+        </header>
+
+    <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+            <div class="hero-content">
+                <h1>Queres ser um Tutor? Estamos felizes por queres te juntar a nós!</h1>
+            </div>
+            <div class="hero-image">
+                <img src="images/tutora a trabalhar.svg" alt="Ilustração de estudantes em aula online">
+            </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="indicacoes">
+        <h2 class="indicacoes_title">Mas Primeiro...</h2>
+        <p class="indicacoes_text">Acreditamos que ensinar é uma forma poderosa de impactar vidas — e queremos garantir que cada explicador na nossa plataforma tem as condições certas para o fazer com qualidade e confiança. O processo de candidatura é simples e feito em duas fases:</p>
+        <div class="process-container">
+            <div class="step">
+                <div class="step-number with-background">1</div>
+                <div class="step-content">
+                    <h2 class="step-title">Formulário Inicial:</h2>
+                    <p class="step-description">
+                        Preenche os campos abaixo com as tuas informações. A nossa equipa irá analisar o teu perfil com atenção.
+                    </p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number with-background">2</div>
+                <div class="step-content">
+                    <h2 class="step-title">Entrevista:</h2>
+                    <p class="step-description">
+                        Se o teu formulário for selecionado, entraremos em contacto para uma conversa informal, onde poderás mostrar quem és, como ensinas e esclarecer qualquer dúvida.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="indicacoes_text">Se o teu formulário for selecionado, entraremos em contacto para uma conversa informal, onde poderás mostrar quem és, como ensinas e esclarecer qualquer dúvida.</p>
+        <hr class="line">
+    </section>
+
+    <section class="form-section">
+        <form id="tutorForm">
+        <fieldset>
+            <legend>Informações Básicas</legend>
+            <input name="nome" placeholder="Nome Completo" required>
+            <input name="email" type="email" placeholder="Email" required>
+            <input name="telemovel" placeholder="Telemóvel" required>
+            <input name="morada" placeholder="Morada" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Formação Académica</legend>
+            <input name="escolaridade" placeholder="Nível de Escolaridade Atual" required>
+            <input name="area" placeholder="Área" required>
+            <input name="curso" placeholder="Curso" required>
+            <input name="instituicao" placeholder="Instituição" required>
+            <textarea name="disciplinas" placeholder="Quais são as disciplinas que pretendes lecionar?" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Experiências e Competências</legend>
+            <label>Já deste explicações ou aulas?</label>
+            <label><input type="radio" name="experiencia" value="Sim"> Sim</label>
+            <label><input type="radio" name="experiencia" value="Não"> Não</label>
+            <textarea name="descricao" placeholder="Se escolheste sim, descreve brevemente o que fizeste:"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Idiomas</legend>
+            <div id="idiomas-container">
+            <div class="idioma-group">
+                <input name="idioma[]" placeholder="Idioma">
+                <input name="nivel[]" placeholder="Nível">
+            </div>
+            </div>
+            <button type="button" onclick="adicionarIdioma()">+ Adicionar Idioma</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Certificação (Opcional)</legend>
+            <textarea name="certificacao" placeholder="Alguma certificação relevante?"></textarea>
+            <input name="ficheiro" type="file">
+        </fieldset>
+
+        <button type="submit">Submeter</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
