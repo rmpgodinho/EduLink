@@ -26,7 +26,7 @@
                     <img src="images/Vector.svg" alt="Lupa">
                 </div>
                 <nav>
-                <a href="#">Início</a>
+                <a href="index.html">Início</a>
                 <a href="#">Tutores</a>
                 <a href="#">Alunos</a>
                 <a href="#">Sobre nós</a>
@@ -82,26 +82,28 @@
         <form id="tutorForm">
         <fieldset>
             <legend>Informações Básicas</legend>
-            <input name="nome" placeholder="Nome Completo" required>
-            <input name="email" type="email" placeholder="Email" required>
-            <input name="telemovel" placeholder="Telemóvel" required>
-            <input name="morada" placeholder="Morada" required>
+            <input class="input" name="nome" placeholder="Nome Completo" required>
+            <input class="input" name="email" type="email" placeholder="Email" required>
+            <input class="input" name="telemovel" placeholder="Telemóvel" required>
+            <input class="input" name="morada" placeholder="Morada" required>
         </fieldset>
 
         <fieldset>
             <legend>Formação Académica</legend>
-            <input name="escolaridade" placeholder="Nível de Escolaridade Atual" required>
-            <input name="area" placeholder="Área" required>
-            <input name="curso" placeholder="Curso" required>
-            <input name="instituicao" placeholder="Instituição" required>
+            <input class="input" name="escolaridade" placeholder="Nível de Escolaridade Atual" required>
+            <input class="input" name="area" placeholder="Área" required>
+            <input class="input" name="curso" placeholder="Curso" required>
+            <input class="input" name="instituicao" placeholder="Instituição" required>
             <textarea name="disciplinas" placeholder="Quais são as disciplinas que pretendes lecionar?" required></textarea>
         </fieldset>
 
         <fieldset>
             <legend>Experiências e Competências</legend>
             <label>Já deste explicações ou aulas?</label>
-            <label><input type="radio" name="experiencia" value="Sim"> Sim</label>
-            <label><input type="radio" name="experiencia" value="Não"> Não</label>
+            <div class="ec">
+                <label><input type="radio" name="experiencia" value="Sim"> Sim</label>
+                <label><input type="radio" name="experiencia" value="Não"> Não</label>
+            </div>
             <textarea name="descricao" placeholder="Se escolheste sim, descreve brevemente o que fizeste:"></textarea>
         </fieldset>
 
@@ -109,8 +111,8 @@
             <legend>Idiomas</legend>
             <div id="idiomas-container">
             <div class="idioma-group">
-                <input name="idioma[]" placeholder="Idioma">
-                <input name="nivel[]" placeholder="Nível">
+                <input class="input" name="idioma[]" placeholder="Idioma">
+                <input class="input" name="nivel[]" placeholder="Nível">
             </div>
             </div>
             <button type="button" onclick="adicionarIdioma()">+ Adicionar Idioma</button>
@@ -126,6 +128,12 @@
         </form>
     </section>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>Copyright © EduLink 2025</p>
+        </div>
+    </footer>
+
+    <script src="js/formulario.js"></script>
 </body>
 </html>

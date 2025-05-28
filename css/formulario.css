@@ -82,7 +82,7 @@ nav a {
 margin: 0 20px;
 font-size: 16px;
 color: #2E3B46;
-font-weight: 500;
+font-weight: 600;
 }
 
 .search-icon {
@@ -216,7 +216,6 @@ form {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 fieldset {
@@ -224,15 +223,22 @@ fieldset {
   margin-bottom: 20px;
 }
 
-input, textarea, select, button {
+legend{
+  font-size: 35px;
+  font-weight: 700;
+  color: #2E3B46;
+}
+
+.input, textarea, select, button {
   display: block;
   width: 100%;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
 }
+
 
 button[type="button"] {
   width: auto;
@@ -241,11 +247,29 @@ button[type="button"] {
 }
 
 button[type="submit"] {
-  background-color: #1f2c50;
+  background-color: #2E3B46;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
+  
 }
 
 button:hover {
   opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #D3D6C5;
+  color: #2E3B46;
+  font-size: 15px;
+  margin-top: 50px;
+}
+
+
+.ec{
+  display: flex;
+  flex-direction: column;
+  
 }
