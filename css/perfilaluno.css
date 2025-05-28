@@ -1,0 +1,384 @@
+/* --- Estilos para a Seção de Perfil (perfil.css) --- */
+/* Certifique-se de que este arquivo é LINKADO APÓS header.css no HTML */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #39393b;
+  overflow-x: hidden; /* Adicionado para evitar rolagem horizontal indesejada */
+}
+
+/* Remove a regra padding do header se estiver definindo padding em header-container */
+header {
+  background-color: #D3D6C5;
+  /* padding: 10px 20px; */ /* REMOVA ou COMENTE esta linha */
+  /* display: flex; */ /* REMOVA esta linha, já está no header-container */
+  /* align-items: center; */ /* REMOVA esta linha, já está no header-container */
+  /* justify-content: space-between; */ /* REMOVA esta linha, já está no header-container */
+  position: relative; /* Adicionado para z-index */
+  z-index: 10; /* Adicionado para garantir que o header fique sobre outros elementos */
+}
+
+/* section header no formulario.css se refere ao background */
+.header { /* Este seletor já existe no agenda.css, mas a ordem pode importar */
+  background-color: #D3D6C5;
+}
+
+/* Header styles (já existiam no agenda.css, mas garantindo que estejam com os valores do formulario.css) */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Mantido do formulario.css */
+  align-items: center;
+  margin: 0 215px; /* Mantido do formulario.css */
+  padding: 50px 0; /* Mantido do formulario.css */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  /* flex: 1; */ /* Removido para usar o comportamento do formulario.css */
+  justify-content: flex-start; /* Mantido do agenda.css, se desejar alinhar à esquerda */
+}
+
+.logo-icon {
+  margin-right: 10px; /* ALTERADO: para 10px como no formulario.css */
+  /* margin-right: 500px; */ /* REMOVA esta linha antiga */
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */ /* Removido para usar o comportamento do formulario.css */
+  /* gap: 20px; */ /* Removido para usar o comportamento do formulario.css */
+  /* flex: 1; */ /* Removido para usar o comportamento do formulario.css */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 0 0; /* Mantido do formulario.css */
+}
+
+nav a {
+  margin: 0 20px;
+  font-size: 16px;
+  color: #2E3B46;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #084fc7;
+}
+
+.search-icon {
+  margin-right: 20px;
+  cursor: pointer;
+  color: #2E3B46;
+  width: 24px;
+  height: 24px;
+}
+
+
+.profile-section {
+    padding: 40px 215px; /* Ajuste o padding para corresponder às margens do header-container */
+    background-color: #f9f9f9; /* Fundo suave para a seção */
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px; /* Espaçamento entre o card de perfil e as aulas */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-image-container {
+    width: 120px; /* Tamanho da imagem de perfil */
+    height: 120px;
+    border-radius: 50%; /* Torna a imagem circular */
+    overflow: hidden;
+    border: 3px solid #D3D6C5; /* Borda ao redor da imagem */
+    flex-shrink: 0; /* Evita que a imagem encolha */
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
+}
+
+.profile-name-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o texto e botão à esquerda */
+    gap: 5px;
+}
+
+.profile-name-edit h2 {
+    font-size: 32px;
+    color: #2C4066;
+    margin: 0;
+    font-weight: 700;
+}
+
+.edit-profile-btn {
+    background-color: #2C4066;
+    color: #FDF8EE;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-btn:hover {
+    background-color: #1f2c50;
+}
+
+.profile-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.details-column, .interests-column {
+    flex: 1; /* Permite que as colunas ocupem espaço igualmente */
+}
+
+.profile-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #39393b;
+    line-height: 1.5;
+}
+
+.profile-details strong {
+    color: #2E3B46;
+}
+
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as tags quebrem para a próxima linha */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.interest-tags span {
+    background-color: #D3D6C5;
+    color: #2E3B46;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- ESTILOS ALTERADOS: para as Seções de Aulas (Aulas Já Frequentadas e Recomendações) --- */
+
+/* Container comum para centralizar o grid das aulas, replicado do index.css */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Largura máxima para o conteúdo centralizado */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Padding nas laterais para telas menores */
+}
+
+.frequent-classes, .recommendations-section {
+    padding: 80px 0; /* Padding como em popular-topics no index.css */
+    background-color: #f9f9f9;
+}
+
+.title_frequent_classes, .title_recommendations {
+    font-size: 40px;
+    color: #2E3B46;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.class-grid { /* Adaptação de topic-grid do index.css */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.class-card-item { /* Adaptação de topic-card do index.css */
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center; /* Centraliza o conteúdo do card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para layout interno do card */
+    flex-direction: column; /* Conteúdo em coluna */
+    justify-content: space-between; /* Para espaçar o conteúdo e o botão no final */
+    height: 100%; /* Garante que todos os cards tenham a mesma altura no grid */
+}
+
+.class-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.class-card-item img {
+    width: 80px; /* Tamanho da imagem do card */
+    height: 80px;
+    object-fit: cover; /* Garante que a imagem se ajuste */
+    margin: 0 auto 20px; /* Centraliza a imagem e adiciona margem inferior */
+    /* Removido border-radius: 50%; para manter as imagens das aulas como retângulos/quadrados se preferir */
+}
+
+.class-card-item h3 {
+    font-size: 24px;
+    color: #2E3B46;
+    margin-bottom: 10px;
+}
+
+.class-card-item p {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 15px; /* Espaço antes do botão */
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+}
+
+.class-card-item .rating { /* Estilo específico para a avaliação com estrelas */
+    color: #FFD700; /* Cor para as estrelas */
+    font-size: 18px;
+    margin-top: 5px; /* Ajuste se necessário */
+    margin-bottom: 15px; /* Espaço antes do botão se for a última p */
+}
+
+.view-more-btn {
+    display: inline-block;
+    background-color: #D3D6C5;
+    color: #2E3B46;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: auto; /* Empurra o botão para o final do flex container */
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centraliza o botão no card */
+}
+
+.view-more-btn:hover {
+    background-color: #AAB18E;
+    color: #FDF8EE;
+}
+
+/* --- Responsividade Geral para a Página de Perfil --- */
+@media (max-width: 1200px) {
+    .profile-section {
+        padding: 20px 50px;
+    }
+    .frequent-classes, .recommendations-section {
+        padding: 40px 0; /* Um pouco menos de padding vertical em telas médias */
+    }
+}
+
+@media (max-width: 900px) {
+    .profile-details {
+        flex-direction: column; /* Colunas de detalhes empilhadas em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        padding: 20px;
+    }
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-name-edit {
+        align-items: center;
+    }
+    /* Em telas menores, o container cuidará do padding, então o padding da seção pode ser 0 ou menor */
+    .frequent-classes, .recommendations-section {
+        padding: 30px 0;
+    }
+    .title_frequent_classes, .title_recommendations {
+        font-size: 30px; /* Títulos menores em mobile */
+        margin-bottom: 30px;
+    }
+    /* class-grid já é responsivo com auto-fit, mas pode precisar de ajustes se o minmax for muito grande */
+    /* .class-grid {
+        grid-template-columns: 1fr;
+    } */
+}
+
+
+/* Menu pop up do perfil */
+.profile-menu-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #D3D6C5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  border-radius: 5px;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu ul li a {
+  color: #2E3B46;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown-menu ul li a:hover {
+  color: #084fc7;
+  box-shadow: none;
+}
+
+.profile-menu-container:hover .dropdown-menu {
+  display: block;
+}
+
+/* Opcional: Estilos para o footer se não estiver no header.css */
+footer {
+  background-color: #D3D6C5;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto; /* Empurra o footer para o final da página se body for flex column */
+  color: #2E3B46;
+  font-size: 15px;
+}
