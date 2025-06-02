@@ -22,10 +22,10 @@
                 </div>
                 <nav>
                 <a href="index.html">Início</a>
-                <a href="#">Tutores</a>
-                <a href="#">Alunos</a>
-                <a href="#">Sobre nós</a>
-                <a href="#">Equipa</a>
+                <a href="index.html#tutors">Tutores</a>
+                <a href="index.html#testimonials">Alunos</a>
+                <a href="index.html#about">Sobre nós</a>
+                <a href="index.html#team">Equipa</a>
                 </nav>
                 <a href="entrar.html" class="btn">Entrar</a>
             </div>
@@ -35,22 +35,20 @@
     <main>
         <div class="login-card">
             <h1 class="login-title">Criar Conta</h1>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Nome" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Sobrenome" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-input" placeholder="Palavra-passe" required>
-                </div>
-                <button type="submit" class="btn login-btn">Criar Conta</button>
-                <a href="#" class="create-account">Entrar</a>
-            </form>
+            <div class="form-group">
+                <input type="text" id="nome" class="form-input" placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="sobrenome" class="form-input" placeholder="Sobrenome" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" class="form-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-input" placeholder="Palavra-passe" required>
+            </div>
+            <button type="button" onclick="criarconta()" class="btn login-btn">Criar Conta</button>
+            <a href="entrar.html" class="create-account">Entrar</a>
         </div>
     </main>
 
@@ -59,5 +57,6 @@
             <p>Copyright © EduLink 2025</p>
         </div>
     </footer>
+    <script src="js/accounts.js"></script>
 </body>
 </html>
