@@ -188,140 +188,231 @@ nav a:hover {
 
 /* --- ESTILOS ALTERADOS: para as Seções de Aulas (Aulas Já Frequentadas e Recomendações) --- */
 
-/* Container comum para centralizar o grid das aulas, replicado do index.css */
-.container {
-    width: 100%;
-    max-width: 1200px; /* Largura máxima para o conteúdo centralizado */
-    margin: 0 auto; /* Centraliza o container */
-    padding: 0 20px; /* Padding nas laterais para telas menores */
-}
-
-.frequent-classes, .recommendations-section {
-    padding: 80px 0; /* Padding como em popular-topics no index.css */
-    background-color: #f9f9f9;
-}
-
-.title_frequent_classes, .title_recommendations {
-    font-size: 40px;
-    color: #2E3B46;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.class-grid { /* Adaptação de topic-grid do index.css */
+/* Cards grid */
+.topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
 }
 
-.class-card-item { /* Adaptação de topic-card do index.css */
+/* Card styles */
+.topic-card {
     background-color: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center; /* Centraliza o conteúdo do card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Para layout interno do card */
-    flex-direction: column; /* Conteúdo em coluna */
-    justify-content: space-between; /* Para espaçar o conteúdo e o botão no final */
-    height: 100%; /* Garante que todos os cards tenham a mesma altura no grid */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.class-card-item:hover {
+.topic-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-.class-card-item img {
-    width: 80px; /* Tamanho da imagem do card */
-    height: 80px;
-    object-fit: cover; /* Garante que a imagem se ajuste */
-    margin: 0 auto 20px; /* Centraliza a imagem e adiciona margem inferior */
-    /* Removido border-radius: 50%; para manter as imagens das aulas como retângulos/quadrados se preferir */
+.card-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
 }
 
-.class-card-item h3 {
-    font-size: 24px;
-    color: #2E3B46;
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.category {
+    font-size: 0.85rem;
+    color: #ACACAC;
+    margin-bottom: 4px;
+}
+
+.category_title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2e3b46;
+    margin-bottom: 8px;
+}
+
+/* Rating stars */
+.rating {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.star {
+    color: #ffa135;
+    margin-right: 2px;
+}
+
+.star.empty {
+    color: #acacac;
+}
+
+/* Card footer */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tutors {
+    display: flex;
+    align-items: center;
+    color: #ACACAC;
+    font-size: 0.9rem;
+}
+
+.tutors i {
+    margin-right: 8px;
+}
+
+.temas_btn {
+    background-color: #aab18e;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 20px
+}
+
+.temas_btn:hover {
+    background-color: #99a07d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+.pub{
+  background-color: #D3D6C5;
+  line-height: 1.6;
+}
+
+.background-icons_pub {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 0 60px;
+}
+
+.content_pub {
+    display: flex;
+    height: 708px;
+    gap: 150px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.illustration_pub {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.illustration_pub img {
+    width: 100%;
+    height: auto;
+    margin-left: -80px;
+}
+
+.text-content_pub {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-content_pub h1 {
+    font-size: 69px;
+    font-weight: 800;
+    color: #2C4066;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.feature_pub {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.feature-icon_pub {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon_pub img {
+    width: 100%;
+    height: auto;
+}
+
+.feature-text_pub h3 {
+    font-size: 30px;
     margin-bottom: 10px;
-}
-
-.class-card-item p {
-    font-size: 16px;
-    color: #555555;
-    margin-bottom: 15px; /* Espaço antes do botão */
-    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
-}
-
-.class-card-item .rating { /* Estilo específico para a avaliação com estrelas */
-    color: #FFD700; /* Cor para as estrelas */
-    font-size: 18px;
-    margin-top: 5px; /* Ajuste se necessário */
-    margin-bottom: 15px; /* Espaço antes do botão se for a última p */
-}
-
-.view-more-btn {
-    display: inline-block;
-    background-color: #D3D6C5;
     color: #2E3B46;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: auto; /* Empurra o botão para o final do flex container */
-    transition: background-color 0.3s ease;
-    align-self: center; /* Centraliza o botão no card */
 }
 
-.view-more-btn:hover {
-    background-color: #AAB18E;
-    color: #FDF8EE;
-}
-
-/* --- Responsividade Geral para a Página de Perfil --- */
-@media (max-width: 1200px) {
-    .profile-section {
-        padding: 20px 50px;
-    }
-    .frequent-classes, .recommendations-section {
-        padding: 40px 0; /* Um pouco menos de padding vertical em telas médias */
-    }
-}
-
-@media (max-width: 900px) {
-    .profile-details {
-        flex-direction: column; /* Colunas de detalhes empilhadas em telas menores */
-    }
+.feature-text_pub p {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #2E3B46;
 }
 
 @media (max-width: 768px) {
-    .profile-section {
-        padding: 20px;
+    .content_pub {
+        flex-direction: column;
+        text-align: center;
     }
-    .profile-header {
+
+    .feature_pub {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    .profile-name-edit {
-        align-items: center;
+
+    .text-content_pub h1 {
+        font-size: 32px;
     }
-    /* Em telas menores, o container cuidará do padding, então o padding da seção pode ser 0 ou menor */
-    .frequent-classes, .recommendations-section {
-        padding: 30px 0;
-    }
-    .title_frequent_classes, .title_recommendations {
-        font-size: 30px; /* Títulos menores em mobile */
-        margin-bottom: 30px;
-    }
-    /* class-grid já é responsivo com auto-fit, mas pode precisar de ajustes se o minmax for muito grande */
-    /* .class-grid {
-        grid-template-columns: 1fr;
-    } */
 }
+
+.container_section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.class-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* This creates 3 columns of equal width */
+    gap: 30px; /* Adjust the gap between cards as needed */
+    margin-top: 20px; /* Space above the grid of cards */
+}
+
+.temas_header {
+    text-align: center; /* Centraliza o texto dentro do cabeçalho */
+    margin-bottom: 30px; /* Adiciona um espaço abaixo do título, ajuste conforme necessário */
+}
+
 
 
 /* Menu pop up do perfil */
@@ -382,3 +473,5 @@ footer {
   color: #2E3B46;
   font-size: 15px;
 }
+
+
