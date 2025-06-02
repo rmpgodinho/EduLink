@@ -6,305 +6,398 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: #39393b;
-  overflow-x: hidden; /* Adicionado para evitar rolagem horizontal indesejada */
-  /* Se você quiser um fundo para o corpo, defina-o aqui */
-  /* background-color: #f0f0f0; */ /* Exemplo de fundo para o corpo inteiro */
+  overflow-x: hidden;
 }
 
-/* Background elements */
-.bg-elements {
-position: absolute;
-z-index: 0;
-overflow: hidden;
-display: flex;
-justify-content: center;
-margin: 100px 0 0 350px;
-
-}
-
-.header{
-    /* Este seletor .header existe, mas a cor deve ir para a tag header */
-}
-
-/* Header styles */
 header {
-position: relative;
-z-index: 10;
-background-color: #D3D6C5; /* Cor de fundo adicionada aqui */
+  background-color: #D3D6C5;
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  background-color: #D3D6C5;
 }
 
 .header-container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin: 0 215px;
-padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 215px;
+  padding: 50px 0;
 }
 
 .logo {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logo-icon {
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 .nav-container {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 nav {
-display: flex;
-align-items: center;
-margin: 0 50px 0 0;
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
 }
 
 nav a {
-margin: 0 20px;
-font-size: 16px;
-color: #2E3B46;
-font-weight: 600;
-text-decoration: none; /* Sublinhado removido aqui */
+  margin: 0 20px;
+  font-size: 16px;
+  color: #2E3B46;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #084fc7;
 }
 
 .search-icon {
-margin-right: 20px;
-cursor: pointer;
-color: #2E3B46;
-width: 24px;
-height: 24px;
+  margin-right: 20px;
+  cursor: pointer;
+  color: #2E3B46;
+  width: 24px;
+  height: 24px;
 }
 
-/* Profile Section Styles */
+/* --- Perfil --- */
 .profile-section {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px; /* Aumenta o padding da seção para mais espaço */
-    background-color: #f7f7f7; /* Cor de fundo suave para a seção */
+  padding: 40px 215px;
+  background-color: #f9f9f9;
 }
 
 .profile-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Largura total dentro do container */
-    max-width: 800px; /* Largura máxima para o card do perfil */
-    padding: 30px; /* Aumenta o padding interno do card */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo verticalmente */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 
 .profile-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-    justify-content: center; /* Centraliza a imagem e o nome */
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .profile-image-container {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 20px;
-    border: 3px solid #6c7a89; /* Borda para a imagem de perfil */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #D3D6C5;
+  flex-shrink: 0;
 }
 
 .profile-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .profile-name-edit {
-    text-align: center;
-    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .profile-name-edit h2 {
-    margin: 0 0 5px 0;
-    color: #39393b;
-    font-size: 2em; /* Tamanho maior para o nome */
+  font-size: 32px;
+  color: #2C4066;
+  margin: 0;
+  font-weight: 700;
 }
 
 .edit-profile-btn {
-    background-color: #6c7a89;
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
+  background-color: #2C4066;
+  color: #FDF8EE;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .edit-profile-btn:hover {
-    background-color: #5a6875;
+  background-color: #1f2c50;
 }
 
 .profile-details {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 }
 
-.details-column, .interests-column {
-    flex: 1;
-    min-width: 280px; /* Largura mínima para as colunas */
-    margin: 10px; /* Espaçamento entre as colunas */
+.details-column,
+.interests-column {
+  flex: 1;
 }
 
 .profile-details p {
-    margin-bottom: 8px;
-    line-height: 1.5;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #39393b;
+  line-height: 1.5;
+}
+
+.profile-details strong {
+  color: #2E3B46;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .interest-tags span {
-    display: inline-block;
-    background-color: #e0e0e0;
-    color: #555555;
-    padding: 5px 10px;
-    border-radius: 15px;
-    margin: 5px 5px 0 0;
-    font-size: 0.9em;
+  background-color: #D3D6C5;
+  color: #2E3B46;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-/* Styles for Temas section (general container for topic cards) */
-.temas {
-    padding: 40px 20px;
-    /* REMOVEMOS O BACKGROUND AQUI. O FUNDO DESEJADO VIRÁ DO TEMAS_CONTAINER */
-    /* background-color: #f0f0f0; */ /* Remova ou comente esta linha */
-}
-
-.temas_container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px; /* O padding aqui cria o espaço entre a borda do temas_container e os cards */
-    background-color: #ffffff; /* Este é o fundo branco do "bloco" onde os cards ficam */
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* --- Seção de Aulas (cards) --- */
+.container_section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .class-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais flexível para responsividade */
-    gap: 25px; /* Ajusta o espaçamento entre os cards */
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); /* Corrigido */
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .temas_header {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-/* Specific styles for topic cards */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); /* Corrigido */
+  gap: 24px;
+}
+
 .topic-card {
-    background-color: #ffffff; /* Garante que cada card individualmente tenha um fundo branco */
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Garante que a imagem não saia dos limites */
-    transition: transform 0.2s ease-in-out;
-    height: 400px; /* Definir uma altura fixa ou min-height para consistência */
-    /* Você pode ajustar essa altura conforme a necessidade */
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .topic-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .card-image {
-    width: 100%;
-    height: 180px; /* Altura fixa para a imagem do card */
-    overflow: hidden;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
 }
 
 .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
-    display: block; /* Remove espaço extra abaixo da imagem */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-content {
-    padding: 15px; /* Ajusta o padding interno do conteúdo do card */
-    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+  padding: 20px;
 }
 
 .category {
-    font-size: 0.9em;
-    color: #6c7a89;
-    margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #ACACAC;
+  margin-bottom: 4px;
 }
 
 .category_title {
-    font-size: 1.2em;
-    color: #39393b;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2e3b46;
+  margin-bottom: 8px;
 }
 
 .rating {
-    margin-top: auto; /* Empurra o rating para baixo, acima do footer */
-    margin-bottom: 10px; /* Espaço entre rating e footer */
+  display: flex;
+  margin-bottom: 24px;
 }
 
-.rating img {
-    width: 80px; /* Ajusta o tamanho das estrelas */
-    height: auto;
+.star {
+  color: #ffa135;
+  margin-right: 2px;
+}
+
+.star.empty {
+  color: #acacac;
 }
 
 .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    border-top: 1px solid #eee; /* Linha divisória sutil */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tutors {
-    font-size: 0.9em;
-    color: #555;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  color: #ACACAC;
+  font-size: 0.9rem;
 }
 
 .tutors i {
-    margin-right: 5px;
-    color: #6c7a89;
+  margin-right: 8px;
 }
 
 .temas_btn {
-    background-color: #6c7a89; /* Cor do botão alterada para o valor anterior */
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
+  background-color: #97A88B;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .temas_btn:hover {
-    background-color: #5a6875; /* Cor de hover alterada para o valor anterior */
+  background-color: #809177;
 }
 
-/* Review specific adjustments for cards in "As Tuas Reviews" */
-.temas .topic-card .card-content .rating + .card-footer {
-    margin-top: 10px; /* Garante espaçamento se não houver image no card */
+/* Responsividade */
+@media (max-width: 768px) {
+  .topics-grid,
+  .class-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .content_pub {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature_pub {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content_pub h1 {
+    font-size: 32px;
+  }
 }
 
-/* Menu pop up do perfil */
+/* Seção promocional */
+.pub {
+  background-color: #D3D6C5;
+  line-height: 1.6;
+}
+
+.background-icons_pub {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 0 60px;
+}
+
+.content_pub {
+  display: flex;
+  height: 708px;
+  gap: 150px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.illustration_pub {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.illustration_pub img {
+  width: 100%;
+  height: auto;
+  margin-left: -80px;
+}
+
+.text-content_pub {
+  flex: 1;
+  padding: 20px;
+}
+
+.text-content_pub h1 {
+  font-size: 69px;
+  font-weight: 800;
+  color: #2C4066;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.feature_pub {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.feature-icon_pub {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon_pub img {
+  width: 100%;
+  height: auto;
+}
+
+.feature-text_pub h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #2E3B46;
+}
+
+.feature-text_pub p {
+  font-size: 26px;
+  line-height: 1.5;
+  color: #2E3B46;
+}
+
+/* Menu dropdown no perfil */
 .profile-menu-container {
   position: relative;
   display: inline-block;
@@ -323,7 +416,7 @@ height: 24px;
   position: absolute;
   background-color: #D3D6C5;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
   top: 100%;
   right: 0;
@@ -337,88 +430,41 @@ height: 24px;
 }
 
 .dropdown-menu ul li a {
-  color: #2e3d49;
+  color: #2E3B46;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-weight: 500;
+  white-space: nowrap;
 }
 
 .dropdown-menu ul li a:hover {
-  background-color: #aeb6a1;
+  color: #084fc7;
+  box-shadow: none;
 }
 
 .profile-menu-container:hover .dropdown-menu {
   display: block;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #D3D6C5;
-    color: #555;
-    font-size: 0.9em;
-    margin-top: 40px; /* Espaço acima do footer */
+  background-color: #D3D6C5;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  color: #2E3B46;
+  font-size: 15px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-container {
-        width: 100%;
-        justify-content: space-around;
-        margin-top: 10px;
-    }
-
-    nav {
-        flex-direction: column;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    nav a {
-        margin: 5px 0;
-    }
-
-    .search-icon, .profile-menu-container {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .profile-card {
-        padding: 20px;
-    }
-
-    .profile-details {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .details-column, .interests-column {
-        margin: 10px 0;
-    }
-
-    .class-cards-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
-
-    .topic-card {
-        height: auto; /* Permite que a altura se ajuste ao conteúdo em telas menores */
-    }
+.review-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-@media (max-width: 480px) {
-    .profile-name-edit h2 {
-        font-size: 1.5em;
-    }
-
-    .edit-profile-btn {
-        font-size: 0.8em;
-        padding: 6px 12px;
-    }
+.review-info .divider {
+  height: 1px;
+  background-color: #ccc;
+  width: 100%;
 }
+
