@@ -3,43 +3,51 @@ var accounts = [
     "nome": "Catarina Machado",
     "especializacao": "Português",
     "avaliacao": 3,
-    "preco": 25
+    "preco": 25,
+    "image": "images/catarina.svg"
   },
   {
     "nome": "Leandro Martins",
     "especializacao": "História",
     "avaliacao": 5,
-    "preco":50
+    "preco":50,
+    "image": "images/leandro.svg"
+
   },
   {
     "nome": "Gabriela Costa",
     "especializacao": "Música",
     "avaliacao": 4,
-    "preco": 25
+    "preco": 25,
+    "image": "images/gabriela.svg"
   },
   {
     "nome": "Haruki Tanaka",
     "especializacao": "Japonês",
     "avaliacao": 5,
-    "preco": 25
+    "preco": 25,
+    "image": "images/Haruki.jpeg"
   },
   {
     "nome": "Beatriz Sousa",
     "especializacao": "História",
     "avaliacao": 5,
-    "preco": 30
+    "preco": 30,
+    "image": "images/beatriz.svg"
   },
   {
     "nome": "João Mateus",
     "especializacao": "História",
     "avaliacao": 4,
-    "preco": 10
+    "preco": 10,
+    "image": "images/joao.svg"
   },
   {
     "nome": "João Pineda",
     "especializacao": "Matemática",
-    "avaliacao": 4,
-    "preco": 25
+    "avaliacao": 5,
+    "preco": 25,
+    "image": "images/joaopineda.jpg"
   },
 ]
 
@@ -88,9 +96,17 @@ function procurarTutor(change) {
         users.forEach((user) => {
             if (user.especializacao.toLowerCase().includes(procura.toLowerCase())) {
                 div.innerHTML += `
-                    <div class="col-4">
-                    <p>${user.nome}</p>
-                    </div>  
+                    <div class="tutor-card">
+                        <img src="${user.image}" alt="${user.nome}" class="tutor-image">
+                        <div class="tutor-info">
+                            <h3>${user.nome}</h3>
+                            <p class="tutor-subject">${user.especializacao}</p>
+                            <div class="tutor-rating">
+                                <span class="rating-number">${user.avaliacao}</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
                 `
             }
         })

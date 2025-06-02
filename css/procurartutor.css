@@ -4,9 +4,12 @@
 
 body {
   margin: 0;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   color: #39393b;
   overflow-x: hidden; /* Adicionado para evitar rolagem horizontal indesejada */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Remove a regra padding do header se estiver definindo padding em header-container */
@@ -75,7 +78,6 @@ nav a:hover {
 
 .procurartutor-section {
     padding: 40px 215px; /* Ajuste o padding para corresponder às margens do header-container */
-    background-color: #f9f9f9; /* Fundo suave para a seção */
 }
 
 /* --- Responsividade Geral para a Página de Perfil --- */
@@ -100,9 +102,9 @@ footer {
   background-color: #D3D6C5;
   text-align: center;
   padding: 10px;
-  margin-top: auto; /* Empurra o footer para o final da página se body for flex column */
   color: #2E3B46;
   font-size: 15px;
+  margin-top: auto;
 }
 
 .profile-menu-container {
@@ -155,19 +157,93 @@ footer {
 }
 
 .form-input {
-    width: 100%;
     padding: 15px;
-    border: 1px solid #2C4066;
-    border-radius: 5px;
+    border: 1px solid #0000004d;
+    border-radius: 50px;
     font-size: 16px;
     background-color: transparent;
+    width: 383px;
+    height: 5px;
 }
 
 .procura-row {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
+}
+
+.row{
+  display: flex;
+  margin-top: 50px;
+  gap: 100px;
+}
+
+select{
+  background-color: #2E3B46;
+  color: white;
+  border-radius: 5px;
+  height: 25px;
 }
 
 .col-4 {
   width: 33%;
 }
+
+.tutors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tutor-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tutor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tutor-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.tutor-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #2d3748;
+}
+
+.tutor-subject {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.tutor-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.rating-number {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.star {
+    color: #f6ad55;
+    font-size: 1rem;
+}
+
+

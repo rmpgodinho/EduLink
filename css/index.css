@@ -12,6 +12,7 @@
       color: #39393b;
       line-height: 1.6;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     a {

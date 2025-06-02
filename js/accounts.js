@@ -3,14 +3,14 @@ var accounts = [
     "nome": "Mariana",
     "sobrenome": "Gonçalves",
     "email": "marianagoncalves@ua.pt",
-    "password": "password",
+    "password": "goncalves0206!",
     "tipo": "Aluno"
   },
   {
     "nome": "Beatriz",
     "sobrenome": "Sousa",
     "email": "beatrizsousa@ua.pt",
-    "password": "password",
+    "password": "8567Bs447.",
     "tipo": "Tutor"
   },
 ]

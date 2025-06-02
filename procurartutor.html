@@ -20,11 +20,11 @@
       <div class="nav-container">
         <nav>
           <a href="index.html">Início</a>
-          <a href="#">Tutores</a>
-          <a href="#">Alunos</a>
-          <a href="#">Sobre nós</a>
-          <a href="#">Equipa</a>
-          <a href="#">Queres ser tutor?</a>
+          <a href="index.html#tutors">Tutores</a>
+          <a href="index.html#testimonials">Alunos</a>
+          <a href="index.html#about">Sobre nós</a>
+          <a href="index.html#team">Equipa</a>
+          <a href="formulario.html">Queres ser tutor?</a>
         </nav>
         <div class="profile-menu-container">
           <div class="profile-icon">
@@ -48,18 +48,21 @@
   <section class="procurartutor-section">
       <div class="procura-row">
         <input type="text" id="procura" class="form-input" oninput="procurarTutor()" placeholder="Procurar" required>
-        <select name="preco" id="avaliacao" onchange="procurarTutor('avaliacao')">
-          <option value="" disbaled selected> Avaliação</option>
-          <option value="up">Ascendente</option>
-          <option value="down">Descendente</option>
-        </select>
-        <select name="preco" id="preco" onchange="procurarTutor('preco')">
-          <option value="" disbaled selected> Preço</option>
-          <option value="up">Ascendente</option>
-          <option value="down">Descendente</option>
-        </select>
+        <div class="opcoes">
+          <select name="preco" id="avaliacao" onchange="procurarTutor('avaliacao')">
+            <option value="" disbaled selected> Avaliação</option>
+            <option value="up">Ascendente</option>
+            <option value="down">Descendente</option>
+          </select>
+          <select name="preco" id="preco" onchange="procurarTutor('preco')">
+            <option value="" disbaled selected> Preço</option>
+            <option value="up">Ascendente</option>
+            <option value="down">Descendente</option>
+          </select>
+        </div>
       </div>
-      <div class="procura-row" id="accounts-div"></div>
+      <div class="row" id="accounts-div">
+      </div>
   </section>
 
   <footer>
