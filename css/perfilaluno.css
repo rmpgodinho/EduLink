@@ -7,413 +7,302 @@ body {
   font-family: "Roboto", sans-serif;
   color: #39393b;
   overflow-x: hidden; /* Adicionado para evitar rolagem horizontal indesejada */
+  /* Se você quiser um fundo para o corpo, defina-o aqui */
+  /* background-color: #f0f0f0; */ /* Exemplo de fundo para o corpo inteiro */
 }
 
-/* Remove a regra padding do header se estiver definindo padding em header-container */
+/* Background elements */
+.bg-elements {
+position: absolute;
+z-index: 0;
+overflow: hidden;
+display: flex;
+justify-content: center;
+margin: 100px 0 0 350px;
+
+}
+
+.header{
+    /* Este seletor .header existe, mas a cor deve ir para a tag header */
+}
+
+/* Header styles */
 header {
-  background-color: #D3D6C5;
-  /* padding: 10px 20px; */ /* REMOVA ou COMENTE esta linha */
-  /* display: flex; */ /* REMOVA esta linha, já está no header-container */
-  /* align-items: center; */ /* REMOVA esta linha, já está no header-container */
-  /* justify-content: space-between; */ /* REMOVA esta linha, já está no header-container */
-  position: relative; /* Adicionado para z-index */
-  z-index: 10; /* Adicionado para garantir que o header fique sobre outros elementos */
+position: relative;
+z-index: 10;
+background-color: #D3D6C5; /* Cor de fundo adicionada aqui */
 }
 
-/* section header no formulario.css se refere ao background */
-.header { /* Este seletor já existe no agenda.css, mas a ordem pode importar */
-  background-color: #D3D6C5;
-}
-
-/* Header styles (já existiam no agenda.css, mas garantindo que estejam com os valores do formulario.css) */
 .header-container {
-  display: flex;
-  justify-content: space-between; /* Mantido do formulario.css */
-  align-items: center;
-  margin: 0 215px; /* Mantido do formulario.css */
-  padding: 50px 0; /* Mantido do formulario.css */
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0 215px;
+padding: 50px 0;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  /* flex: 1; */ /* Removido para usar o comportamento do formulario.css */
-  justify-content: flex-start; /* Mantido do agenda.css, se desejar alinhar à esquerda */
+display: flex;
+align-items: center;
 }
 
 .logo-icon {
-  margin-right: 10px; /* ALTERADO: para 10px como no formulario.css */
-  /* margin-right: 500px; */ /* REMOVA esta linha antiga */
+margin-right: 10px;
 }
 
 .nav-container {
-  display: flex;
-  align-items: center;
-  /* justify-content: flex-end; */ /* Removido para usar o comportamento do formulario.css */
-  /* gap: 20px; */ /* Removido para usar o comportamento do formulario.css */
-  /* flex: 1; */ /* Removido para usar o comportamento do formulario.css */
+display: flex;
+align-items: center;
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  margin: 0 50px 0 0; /* Mantido do formulario.css */
+display: flex;
+align-items: center;
+margin: 0 50px 0 0;
 }
 
 nav a {
-  margin: 0 20px;
-  font-size: 16px;
-  color: #2E3B46;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #084fc7;
+margin: 0 20px;
+font-size: 16px;
+color: #2E3B46;
+font-weight: 600;
+text-decoration: none; /* Sublinhado removido aqui */
 }
 
 .search-icon {
-  margin-right: 20px;
-  cursor: pointer;
-  color: #2E3B46;
-  width: 24px;
-  height: 24px;
+margin-right: 20px;
+cursor: pointer;
+color: #2E3B46;
+width: 24px;
+height: 24px;
 }
 
-
+/* Profile Section Styles */
 .profile-section {
-    padding: 40px 215px; /* Ajuste o padding para corresponder às margens do header-container */
-    background-color: #f9f9f9; /* Fundo suave para a seção */
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px; /* Aumenta o padding da seção para mais espaço */
+    background-color: #f7f7f7; /* Cor de fundo suave para a seção */
 }
 
 .profile-card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Largura total dentro do container */
+    max-width: 800px; /* Largura máxima para o card do perfil */
+    padding: 30px; /* Aumenta o padding interno do card */
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-bottom: 50px; /* Espaçamento entre o card de perfil e as aulas */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
 
 .profile-header {
     display: flex;
     align-items: center;
-    gap: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center; /* Centraliza a imagem e o nome */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
 }
 
 .profile-image-container {
-    width: 120px; /* Tamanho da imagem de perfil */
-    height: 120px;
-    border-radius: 50%; /* Torna a imagem circular */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #D3D6C5; /* Borda ao redor da imagem */
-    flex-shrink: 0; /* Evita que a imagem encolha */
+    margin-right: 20px;
+    border: 3px solid #6c7a89; /* Borda para a imagem de perfil */
 }
 
 .profile-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
+    object-fit: cover;
 }
 
 .profile-name-edit {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha o texto e botão à esquerda */
-    gap: 5px;
+    text-align: center;
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
 }
 
 .profile-name-edit h2 {
-    font-size: 32px;
-    color: #2C4066;
-    margin: 0;
-    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #39393b;
+    font-size: 2em; /* Tamanho maior para o nome */
 }
 
 .edit-profile-btn {
-    background-color: #2C4066;
-    color: #FDF8EE;
+    background-color: #6c7a89;
+    color: #ffffff;
     padding: 8px 15px;
-    border-radius: 20px;
+    border-radius: 5px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.9em;
     transition: background-color 0.3s ease;
 }
 
 .edit-profile-btn:hover {
-    background-color: #1f2c50;
+    background-color: #5a6875;
 }
 
 .profile-details {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
 }
 
 .details-column, .interests-column {
-    flex: 1; /* Permite que as colunas ocupem espaço igualmente */
+    flex: 1;
+    min-width: 280px; /* Largura mínima para as colunas */
+    margin: 10px; /* Espaçamento entre as colunas */
 }
 
 .profile-details p {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #39393b;
+    margin-bottom: 8px;
     line-height: 1.5;
 }
 
-.profile-details strong {
-    color: #2E3B46;
-}
-
-.interest-tags {
-    display: flex;
-    flex-wrap: wrap; /* Permite que as tags quebrem para a próxima linha */
-    gap: 10px;
-    margin-top: 10px;
-}
-
 .interest-tags span {
-    background-color: #D3D6C5;
-    color: #2E3B46;
-    padding: 5px 12px;
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #555555;
+    padding: 5px 10px;
     border-radius: 15px;
-    font-size: 14px;
-    font-weight: 500;
+    margin: 5px 5px 0 0;
+    font-size: 0.9em;
 }
 
-/* --- ESTILOS ALTERADOS: para as Seções de Aulas (Aulas Já Frequentadas e Recomendações) --- */
+/* Styles for Temas section (general container for topic cards) */
+.temas {
+    padding: 40px 20px;
+    /* REMOVEMOS O BACKGROUND AQUI. O FUNDO DESEJADO VIRÁ DO TEMAS_CONTAINER */
+    /* background-color: #f0f0f0; */ /* Remova ou comente esta linha */
+}
 
-/* Cards grid */
-.topics-grid {
+.temas_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; /* O padding aqui cria o espaço entre a borda do temas_container e os cards */
+    background-color: #ffffff; /* Este é o fundo branco do "bloco" onde os cards ficam */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.class-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais flexível para responsividade */
+    gap: 25px; /* Ajusta o espaçamento entre os cards */
+    margin-top: 20px;
 }
 
-/* Card styles */
+.temas_header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Specific styles for topic cards */
 .topic-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background-color: #ffffff; /* Garante que cada card individualmente tenha um fundo branco */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Garante que a imagem não saia dos limites */
+    transition: transform 0.2s ease-in-out;
+    height: 400px; /* Definir uma altura fixa ou min-height para consistência */
+    /* Você pode ajustar essa altura conforme a necessidade */
 }
 
 .topic-card:hover {
     transform: translateY(-5px);
-    cursor: pointer;
 }
 
 .card-image {
-    height: 180px;
+    width: 100%;
+    height: 180px; /* Altura fixa para a imagem do card */
     overflow: hidden;
-    position: relative;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+    display: block; /* Remove espaço extra abaixo da imagem */
 }
 
 .card-content {
-    padding: 20px;
+    padding: 15px; /* Ajusta o padding interno do conteúdo do card */
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo verticalmente */
 }
 
 .category {
-    font-size: 0.85rem;
-    color: #ACACAC;
-    margin-bottom: 4px;
+    font-size: 0.9em;
+    color: #6c7a89;
+    margin-bottom: 5px;
 }
 
 .category_title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #2e3b46;
-    margin-bottom: 8px;
+    font-size: 1.2em;
+    color: #39393b;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-/* Rating stars */
 .rating {
-    display: flex;
-    margin-bottom: 24px;
+    margin-top: auto; /* Empurra o rating para baixo, acima do footer */
+    margin-bottom: 10px; /* Espaço entre rating e footer */
 }
 
-.star {
-    color: #ffa135;
-    margin-right: 2px;
+.rating img {
+    width: 80px; /* Ajusta o tamanho das estrelas */
+    height: auto;
 }
 
-.star.empty {
-    color: #acacac;
-}
-
-/* Card footer */
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #eee; /* Linha divisória sutil */
 }
 
 .tutors {
+    font-size: 0.9em;
+    color: #555;
     display: flex;
     align-items: center;
-    color: #ACACAC;
-    font-size: 0.9rem;
 }
 
 .tutors i {
-    margin-right: 8px;
+    margin-right: 5px;
+    color: #6c7a89;
 }
 
 .temas_btn {
-    background-color: #aab18e;
+    background-color: #6c7a89; /* Cor do botão alterada para o valor anterior */
     color: white;
+    padding: 8px 15px;
     border: none;
-    border-radius: 50px;
-    padding: 8px 16px;
-    font-size: 0.85rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    font-size: 20px
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
 }
 
 .temas_btn:hover {
-    background-color: #99a07d;
+    background-color: #5a6875; /* Cor de hover alterada para o valor anterior */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .topics-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .header h1 {
-        font-size: 2rem;
-    }
+/* Review specific adjustments for cards in "As Tuas Reviews" */
+.temas .topic-card .card-content .rating + .card-footer {
+    margin-top: 10px; /* Garante espaçamento se não houver image no card */
 }
-
-.pub{
-  background-color: #D3D6C5;
-  line-height: 1.6;
-}
-
-.background-icons_pub {
-    position: absolute;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0 0 60px;
-}
-
-.content_pub {
-    display: flex;
-    height: 708px;
-    gap: 150px;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-}
-
-.illustration_pub {
-    flex: 1;
-    max-width: 500px;
-    position: relative;
-}
-
-.illustration_pub img {
-    width: 100%;
-    height: auto;
-    margin-left: -80px;
-}
-
-.text-content_pub {
-    flex: 1;
-    padding: 20px;
-}
-
-.text-content_pub h1 {
-    font-size: 69px;
-    font-weight: 800;
-    color: #2C4066;
-    margin-bottom: 30px;
-    line-height: 1.2;
-}
-
-.feature_pub {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 30px;
-    gap: 15px;
-}
-
-.feature-icon_pub {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.feature-icon_pub img {
-    width: 100%;
-    height: auto;
-}
-
-.feature-text_pub h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: #2E3B46;
-}
-
-.feature-text_pub p {
-    font-size: 26px;
-    line-height: 1.5;
-    color: #2E3B46;
-}
-
-@media (max-width: 768px) {
-    .content_pub {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .feature_pub {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .text-content_pub h1 {
-        font-size: 32px;
-    }
-}
-
-.container_section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.class-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* This creates 3 columns of equal width */
-    gap: 30px; /* Adjust the gap between cards as needed */
-    margin-top: 20px; /* Space above the grid of cards */
-}
-
-.temas_header {
-    text-align: center; /* Centraliza o texto dentro do cabeçalho */
-    margin-bottom: 30px; /* Adiciona um espaço abaixo do título, ajuste conforme necessário */
-}
-
-
 
 /* Menu pop up do perfil */
 .profile-menu-container {
@@ -448,30 +337,88 @@ nav a:hover {
 }
 
 .dropdown-menu ul li a {
-  color: #2E3B46;
+  color: #2e3d49;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  white-space: nowrap;
+  font-weight: 500;
 }
 
 .dropdown-menu ul li a:hover {
-  color: #084fc7;
-  box-shadow: none;
+  background-color: #aeb6a1;
 }
 
 .profile-menu-container:hover .dropdown-menu {
   display: block;
 }
 
-/* Opcional: Estilos para o footer se não estiver no header.css */
+/* Footer styles */
 footer {
-  background-color: #D3D6C5;
-  text-align: center;
-  padding: 10px;
-  margin-top: auto; /* Empurra o footer para o final da página se body for flex column */
-  color: #2E3B46;
-  font-size: 15px;
+    text-align: center;
+    padding: 20px;
+    background-color: #D3D6C5;
+    color: #555;
+    font-size: 0.9em;
+    margin-top: 40px; /* Espaço acima do footer */
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .nav-container {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    .search-icon, .profile-menu-container {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details-column, .interests-column {
+        margin: 10px 0;
+    }
+
+    .class-cards-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .topic-card {
+        height: auto; /* Permite que a altura se ajuste ao conteúdo em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-name-edit h2 {
+        font-size: 1.5em;
+    }
+
+    .edit-profile-btn {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
