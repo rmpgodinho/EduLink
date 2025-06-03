@@ -1,65 +1,149 @@
-/* styles.css */
-/* Reset & base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f2;
-  color: #333;
-  line-height: 1.4;
-}
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #39393b;
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
-/* Header */
-.site-header {
-  background: #d3d3c8;
-  padding: 1rem 0;
+/* -------- Header (copiado de agenda.css) -------- */
+header {
+  background-color: #D3D6C5;
+  position: relative;
+  z-index: 10;
 }
-.header-inner {
+
+.header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin: 0 215px;
+  padding: 50px 0;
 }
-.branding {
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-icon {
+  margin-right: 10px;
+}
+
+.nav-container {
   display: flex;
   align-items: center;
 }
-.logo {
-  width: 40px;
-  height: 40px;
-  margin-right: 0.5rem;
-}
-.site-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-.main-nav a {
-  margin: 0 0.75rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.user-menu .icon-user {
-  font-size: 1.5rem;
+
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 0 0;
 }
 
-/* Sections */
+nav a {
+  margin: 0 20px;
+  font-size: 16px;
+  color: #2E3B46;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #084fc7;
+}
+
+/* Menu pop-up do perfil */
+.profile-menu-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #D3D6C5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  border-radius: 5px;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu ul li a {
+  color: #2E3B46;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown-menu ul li a:hover {
+  color: #084fc7;
+}
+
+.profile-menu-container:hover .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  .header-container {
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+}
+
+/* -------- Conteúdo principal com fundo levemente cinza -------- */
+.agenda-container {
+  background-color: #EBEAEA;  /* Caixa atrás do conteúdo */
+  padding: 30px;              /* Espaçamento interno maior para destacar a caixa */
+  margin: 20px auto;          /* Espaço ao redor e centralizado */
+  max-width: 1000px;          /* Largura máxima para não ficar muito esticado */
+  border-radius: 8px;         /* Bordas levemente arredondadas */
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: #2C4066;
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 0; /* Remove espaço extra acima do título */
+}
+
 .card {
   background: #fff;
   border-radius: 8px;
   padding: 1.5rem;
   margin: 1.5rem 0;
 }
+
 .section-light {
   background: #fefefe;
 }
+
+/* Steps numeradas */
 .step {
   display: inline-block;
   background: #dde0c8;
@@ -122,24 +206,33 @@ body {
   display: flex;
   gap: 1rem;
 }
+
+/* Ajuste na classe .payment-option para alinhar os logos */
 .payment-option {
   flex: 1;
+  display: flex;
+  flex-direction: column;    /* Coluna para imagem em cima e texto embaixo */
+  align-items: center;       /* Centraliza horizontalmente */
+  justify-content: center;   /* Centraliza verticalmente, caso seja necessário */
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 0.75rem;
-  text-align: center;
   cursor: pointer;
   transition: border-color 0.2s;
 }
+
 .payment-option.selected {
   border-color: #224177;
 }
+
+/* Define um tamanho consistente para os ícones, se quiser */
 .payment-option img {
   max-width: 60px;
+  max-height: 60px;   /* Garante proporção uniforme */
   margin-bottom: 0.5rem;
 }
 
-/* Résumé / Pay box: same size & style as other cards */
+/* Resumo / Pagamento */
 .summary-card {
   background: #fff;
   border-radius: 8px;
@@ -173,17 +266,28 @@ body {
   cursor: pointer;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem 0;
-  background: #e0e0d8;
-  margin-top: 2rem;
-}
-
-/* Clear any floats */
+/* Ajuste para limpar floats, se houver */
 #booking-form::after {
   content: "";
   display: table;
   clear: both;
+}
+
+/* -------- Footer (copiado de agenda.css) -------- */
+footer {
+  background-color: #D3D6C5;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  color: #2E3B46;
+  font-size: 15px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }

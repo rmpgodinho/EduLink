@@ -1,36 +1,51 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agendar Sessão – EduLink</title>
+  <title>Pagamento – EduLink</title>
+  <!-- Agora usamos o mesmo CSS da Agenda -->
   <link rel="stylesheet" href="css/pagamento.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="branding">
-        <img src="logo-placeholder.png" alt="EduLink Logo" class="logo"/>
-        <span class="site-title">EDULINK</span>
+  <!-- Header idêntico ao da Agenda -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="images/image-removebg-preview 6.svg" alt="Logo">
+        </div>
       </div>
-      <nav class="main-nav">
-        <a href="#">Início</a>
-        <a href="#">Tutores</a>
-        <a href="#">Alunos</a>
-        <a href="#">Sobre nós</a>
-        <a href="#">Equipa</a>
-        <a href="#">Queres ser Tutor?</a>
-      </nav>
-      <div class="user-menu">
-        <span class="icon-user">👤</span>
+
+      <div class="nav-container">
+        <nav>
+          <a href="index.html">Início</a>
+          <a href="#">Tutores</a>
+          <a href="#">Alunos</a>
+          <a href="#">Sobre nós</a>
+          <a href="#">Equipa</a>
+          <a href="#">Queres ser tutor?</a>
+        </nav>
+        <div class="profile-menu-container">
+          <div class="profile-icon">
+            <img src="images/icon.svg" alt="Ícone de Perfil">
+          </div>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="perfilaluno.html">Meu Perfil</a></li>
+              <li><a href="#">Minhas Aulas</a></li>
+              <li><a href="#">Configurações</a></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Main content -->
-  <main class="container">
+  <!-- Conteúdo principal na mesma estrutura de container usada pela Agenda -->
+  <main class="agenda-container">
+    <h1>Agendar Sessão</h1>
     <form id="booking-form">
       <!-- 1. Informações do Tutor -->
       <section class="card section-light">
@@ -48,7 +63,7 @@
             </blockquote>
           </div>
           <div class="tutor-photo">
-            <img src="tutor-photo.jpg" alt="Foto do Tutor">
+            <img src="images/beatriz.svg" alt="Foto do Tutor">
           </div>
         </div>
       </section>
@@ -72,7 +87,7 @@
         </div>
         <label class="description-label">
           Descrição:
-          <textarea id="session-desc" placeholder="Faz uma breve descrição da matéria que tens dúvidas. Não precisas de ser muito específico..."></textarea>
+          <textarea id="session-desc" placeholder="Faz uma breve descrição da matéria que tens dúvidas."></textarea>
         </label>
         <label class="description-label">
           Email:
@@ -85,15 +100,15 @@
         <h2><span class="step">3</span> Método de Pagamento</h2>
         <div class="payment-methods">
           <div class="payment-option" data-method="credit">
-            <img src="icon-cc.png" alt="Cartão de Crédito">
+            <img src="images/cartao_credito.png" alt="Cartão de Crédito">
             <span>Cartão de Crédito</span>
           </div>
           <div class="payment-option" data-method="mbway">
-            <img src="icon-mbway.png" alt="MB Way">
+            <img src="images/mbway.png" alt="MB Way">
             <span>MB Way</span>
           </div>
           <div class="payment-option" data-method="paypal">
-            <img src="icon-paypal.png" alt="Paypal">
+            <img src="images/PayPal.svg" alt="Paypal">
             <span>Paypal</span>
           </div>
         </div>
@@ -116,10 +131,11 @@
     </form>
   </main>
 
-  <footer class="footer">
-    <p>Copyright © Edulink 2025</p>
+  <!-- Footer idêntico ao da Agenda -->
+  <footer>
+    Copyright © Edulink 2025
   </footer>
-
+  
   <script src="js/pagamento.js"></script>
 </body>
 </html>
