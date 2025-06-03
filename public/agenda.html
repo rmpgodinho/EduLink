@@ -6,138 +6,190 @@
   <link rel="stylesheet" href="css/agenda.css">
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="images/image-removebg-preview 6.svg" alt="Logo">
+        </div>
+      </div>
 
-  
-    <header>
-            <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <img src="images/image-removebg-preview 6.svg" alt="Logo">
-                </div>
+      <div class="nav-container">
+        <nav>
+          <a href="index.html">Início</a>
+          <a href="#">Tutores</a>
+          <a href="#">Alunos</a>
+          <a href="#">Sobre nós</a>
+          <a href="#">Equipa</a>
+          <a href="#">Queres ser tutor?</a>
+        </nav>
+        <div class="profile-menu-container">
+          <div class="profile-icon">
+            <img src="images/icon.svg" alt="Ícone de Perfil">
+          </div>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="perfiltutor.html">Meu Perfil</a></li>
+              <li><a href="#">Minhas Aulas</a></li>
+              <li><a href="#">Configurações</a></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="agenda-container">
+    <h1>Agenda</h1>
+    <table>
+      <tr>
+        <th>Hora</th>
+        <th>Segunda</th>
+        <th>Terça</th>
+        <th>Quarta</th>
+        <th>Quinta</th>
+        <th>Sexta</th>
+        <th>Sábado</th>
+        <th>Domingo</th>
+      </tr>
+
+      <tr>
+        <td>09:00</td>
+        <td></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>10:00</td>
+        <!-- Segunda-feira -->
+        <td class="day-highlight">
+          <div class="event" 
+               data-title="Revolução Francesa" 
+               data-host="professor1@exemplo.com" 
+               data-guest="aluno1@exemplo.com">
+            <div>
+              Nome1<br>
+              <small>Tópico: Revolução Francesa</small>
             </div>
-
-            <div class="nav-container">
-                <nav>
-                <a href="index.html">Início</a> <a href="#">Tutores</a>
-                <a href="#">Alunos</a>
-                <a href="#">Sobre nós</a>
-                <a href="#">Equipa</a>
-                <a href="#">Queres ser tutor?</a>
-                </nav>
-                <div class="profile-menu-container">
-                    <div class="profile-icon">
-                        <img src="images/icon.svg" alt="Ícone de Perfil">
-                    </div>
-                    <div class="dropdown-menu">
-                        <ul>
-                            <li><a href="perfilaluno.html">Meu Perfil</a></li>
-                            <li><a href="#">Minhas Aulas</a></li>
-                            <li><a href="#">Configurações</a></li>
-                            <li><a href="#">Sair</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- Botão de iniciar reunião -->
+            <button class="start-class">Iniciar Aula</button>
+          </div>
+        </td>
+        <!-- Terça-feira vazia -->
+        <td></td>
+        <!-- Quarta-feira -->
+        <td class="day-highlight">
+          <!-- Exemplo de evento sem botão, pode remover este bloco -->
+        </td>
+        <!-- Quinta vazia -->
+        <td></td>
+        <!-- Sexta-feira -->
+        <td class="day-highlight">
+          <div class="event" 
+               data-title="As Cruzadas" 
+               data-host="professor1@exemplo.com" 
+               data-guest="aluno1@exemplo.com">
+            <div>
+              Nome1<br>
+              <small>Tópico: As Cruzadas</small>
             </div>
+            <button class="start-class">Iniciar Aula</button>
+          </div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>11:00</td>
+        <td></td>
+        <td></td>
+        <td class="day-highlight">
+          <div class="event" 
+               data-title="O Renascimento" 
+               data-host="raquelmeira29@gmail.com" 
+               data-guest="raquelsmeira205@gmail.com">
+            <div>
+              Mariana Gonçalves<br>
+              <small>Tópico: O Renascimento</small>
             </div>
-        </header>
-</section>
+            <button class="start-class">Iniciar Aula</button>
+          </div>
+        </td>
+        <td></td>
+        <td class="day-highlight">
+          <div class="event" 
+               data-title="O Renascimento" 
+               data-host="professor1@exemplo.com" 
+               data-guest="aluno1@exemplo.com">
+            <div>
+              Nome1<br>
+              <small>Tópico: O renascimento</small>
+            </div>
+            <button class="start-class">Iniciar Aula</button>
+          </div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
 
-<div class="agenda-container">
-  <h1>Agenda</h1>
-  <table>
-    <tr>
-      <th>Hora</th>
-      <th>Segunda</th>
-      <th>Terça</th>
-      <th>Quarta</th>
-      <th>Quinta</th>
-      <th>Sexta</th>
-      <th>Sábado</th>
-      <th>Domingo</th>
-    </tr>
+      <tr>
+        <td>12:00</td>
+        <td></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td class="day-highlight">
+          <div class="event" 
+               data-title="Grécia Antiga" 
+               data-host="professor1@exemplo.com" 
+               data-guest="aluno1@exemplo.com">
+            <div>
+              Nome1<br>
+              <small>Tópico: Grécia Antiga</small>
+            </div>
+            <button class="start-class">Iniciar Aula</button>
+          </div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
 
-    <tr>
-      <td>09:00</td>
-      <td></td><td></td><td class="day-highlight"></td><td></td><td class="day-highlight"></td><td></td><td></td>
-    </tr>
+      <tr>
+        <td>13:00</td>
+        <td></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td></td>
+      </tr>
 
-    <tr>
-      <td>10:00</td>
-      <td class="day-highlight">
-        <div class="event">
-          <a href="detalhes_aula.html?id=aula1" target="_blank">
-            Nome1<br>
-            <small>Tópico: Revolução Francesa</small>
-          </a>
-        </div>
-      </td>
-      <td></td>
-      <td class="day-highlight"></td>
-      <td></td>
-      <td class="day-highlight">
-        <div class="event">
-          <a href="detalhes_aula.html?id=aula2" target="_blank">
-            Nome1<br>
-            <small>Tópico: As Cruzadas</small>
-          </a>
-        </div>
-      </td>
-      <td></td><td></td>
-    </tr>
+      <tr>
+        <td>14:00</td>
+        <td></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td class="day-highlight"></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
 
-    <tr>
-      <td>11:00</td>
-      <td></td>
-      <td></td>
-      <td class="day-highlight">
-        <div class="event">
-          <a href="detalhes_aula.html?id=aula3" target="_blank">
-            Mariana Gonçalves<br>
-            <small>Tópico: O Renascimento</small>
-          </a>
-        </div>
-      </td>
-      <td></td>
-      <td class="day-highlight">
-        <div class="event">
-          <a href="detalhes_aula.html?id=aula4" target="_blank">
-            Nome1<br>
-            <small>Tópico: O renascimento</small>
-          </a>
-        </div>
-      </td>
-      <td></td><td></td>
-    </tr>
+  <footer>
+    Copyright © Edulink 2025
+  </footer>
 
-    <tr>
-      <td>12:00</td>
-      <td></td><td></td><td class="day-highlight"></td><td></td>
-      <td class="day-highlight">
-        <div class="event">
-          <a href="detalhes_aula.html?id=aula5" target="_blank">
-            Nome1<br>
-            <small>Tópico: Grécia Antiga</small>
-          </a>
-        </div>
-      </td>
-      <td></td><td></td>
-    </tr>
-
-    <tr>
-      <td>13:00</td>
-      <td></td><td></td><td class="day-highlight"></td><td></td><td class="day-highlight"></td><td></td><td></td>
-    </tr>
-
-    <tr>
-      <td>14:00</td>
-      <td></td><td></td><td class="day-highlight"></td><td></td><td class="day-highlight"></td><td></td><td></td>
-    </tr>
-  </table>
-</div>
-
-<footer>
-  Copyright © Edulink 2025
-</footer>
-
+  <!-- Importa o script de frontend (agenda.js) -->
+  <script src="js/agenda.js"></script>
 </body>
 </html>
