@@ -1,119 +1,89 @@
-/* --- Estilos para a Seção de Perfil (perfil.css) --- */
-/* Certifique-se de que este arquivo é LINKADO APÓS header.css no HTML */
+/* ======================================
+   procurartutor.css
+   CSS completo para a página “Procurar Tutor”
+   Inclui cabeçalho, secção de busca e cartões de tutor
+   ====================================== */
+
+/* Fonte Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+:root {
+  --color-primary: #2C4066;
+  --color-secondary: #D3D6C5;
+  --color-text: #2E3B46;
+  --color-bg: #f5f5f5;
+  --color-card-bg: #ffffff;
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+  --color-accent: #084fc7;
+  --color-rating-star: #FFA500;
+}
+
+/* ===== Reset e estilos globais ===== */
+* {
+  box-sizing: border-box;
   margin: 0;
-  height: 100vh;
+  padding: 0;
+}
+
+body {
   font-family: "Roboto", sans-serif;
-  color: #39393b;
-  overflow-x: hidden; /* Adicionado para evitar rolagem horizontal indesejada */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Remove a regra padding do header se estiver definindo padding em header-container */
+/* ===== Header (mesmo estilo que nas outras páginas) ===== */
 header {
-  background-color: #D3D6C5;
-  /* padding: 10px 20px; */ /* REMOVA ou COMENTE esta linha */
-  /* display: flex; */ /* REMOVA esta linha, já está no header-container */
-  /* align-items: center; */ /* REMOVA esta linha, já está no header-container */
-  /* justify-content: space-between; */ /* REMOVA esta linha, já está no header-container */
-  position: relative; /* Adicionado para z-index */
-  z-index: 10; /* Adicionado para garantir que o header fique sobre outros elementos */
+  background-color: var(--color-secondary);
+  position: relative;
+  z-index: 10;
 }
 
-/* section header no formulario.css se refere ao background */
-.header { /* Este seletor já existe no agenda.css, mas a ordem pode importar */
-  background-color: #D3D6C5;
-}
-
-/* Header styles (já existiam no agenda.css, mas garantindo que estejam com os valores do formulario.css) */
 .header-container {
   display: flex;
-  justify-content: space-between; /* Mantido do formulario.css */
+  justify-content: space-between;
   align-items: center;
-  margin: 0 215px; /* Mantido do formulario.css */
-  padding: 50px 0; /* Mantido do formulario.css */
+  margin: 0 215px;
+  padding: 50px 0;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  /* flex: 1; */ /* Removido para usar o comportamento do formulario.css */
-  justify-content: flex-start; /* Mantido do agenda.css, se desejar alinhar à esquerda */
-}
-
-.logo-icon {
-  margin-right: 10px; /* ALTERADO: para 10px como no formulario.css */
-  /* margin-right: 500px; */ /* REMOVA esta linha antiga */
+.logo .logo-icon img {
+  width: 40px;
+  height: auto;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
-  /* justify-content: flex-end; */ /* Removido para usar o comportamento do formulario.css */
-  /* gap: 20px; */ /* Removido para usar o comportamento do formulario.css */
-  /* flex: 1; */ /* Removido para usar o comportamento do formulario.css */
 }
 
 nav {
   display: flex;
   align-items: center;
-  margin: 0 50px 0 0; /* Mantido do formulario.css */
+  margin-right: 50px;
 }
 
 nav a {
   margin: 0 20px;
   font-size: 16px;
-  color: #2E3B46;
+  color: var(--color-text);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #084fc7;
-}
-
-.procurartutor-section {
-    padding: 40px 215px; /* Ajuste o padding para corresponder às margens do header-container */
-}
-
-/* --- Responsividade Geral para a Página de Perfil --- */
-@media (max-width: 1200px) {
-    .procurartutor-section {
-        padding: 20px 50px;
-    }
-    .frequent-classes, .recommendations-section {
-        padding: 40px 0; /* Um pouco menos de padding vertical em telas médias */
-    }
-}
-
-
-@media (max-width: 768px) {
-    .procurartutor-section {
-        padding: 20px;
-    }
-}
-
-/* Opcional: Estilos para o footer se não estiver no header.css */
-footer {
-  background-color: #D3D6C5;
-  text-align: center;
-  padding: 10px;
-  color: #2E3B46;
-  font-size: 15px;
-  margin-top: auto;
+  color: var(--color-accent);
 }
 
 .profile-menu-container {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
   cursor: pointer;
 }
-
 
 .profile-icon img {
   width: 30px;
@@ -124,126 +94,221 @@ footer {
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #D3D6C5;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
   top: 100%;
   right: 0;
+  background-color: var(--color-secondary);
+  min-width: 160px;
   border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 .dropdown-menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
 .dropdown-menu ul li a {
-  color: #2E3B46;
-  padding: 12px 16px;
-  text-decoration: none;
   display: block;
+  padding: 12px 16px;
+  color: var(--color-text);
+  text-decoration: none;
   white-space: nowrap;
+  transition: background-color 0.2s ease;
 }
 
 .dropdown-menu ul li a:hover {
-  color: #084fc7;
-  box-shadow: none;
+  background-color: #e2e5d4;
 }
 
 .profile-menu-container:hover .dropdown-menu {
   display: block;
 }
 
-.form-input {
-    padding: 15px;
-    border: 1px solid #0000004d;
-    border-radius: 50px;
-    font-size: 16px;
-    background-color: transparent;
-    width: 383px;
-    height: 5px;
+/* ===== Secção “Procurar Tutor” ===== */
+.procurartutor-section {
+  flex: 1;
+  padding: 20px;
 }
 
+/* Linha de busca e filtros */
 .procura-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.row{
-  display: flex;
-  margin-top: 50px;
-  gap: 100px;
-}
-
-select{
-  background-color: #2E3B46;
-  color: white;
+.form-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  height: 25px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }
 
-.col-4 {
-  width: 33%;
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
 }
 
-.tutors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+.opcoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
+.opcoes select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.opcoes select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* Contêiner de cartões de tutor */
+#accounts-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Link que envolve todo o cartão para tornar clicável */
+.tutor-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Cartão de tutor */
 .tutor-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
-    transition: transform 0.2s, box-shadow 0.2s;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--color-card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .tutor-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px var(--color-card-shadow);
 }
 
+/* Imagem do tutor dentro do cartão */
 .tutor-image {
-    width: 100%;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Informação textual dentro do cartão */
+.tutor-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .tutor-info h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: #2d3748;
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  color: var(--color-primary);
 }
 
 .tutor-subject {
-    color: #718096;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+  margin: 0 0 10px 0;
+  font-size: 0.95em;
+  color: #555;
 }
 
 .tutor-rating {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: var(--color-rating-star);
 }
 
 .rating-number {
-    font-weight: 600;
-    color: #2d3748;
+  font-weight: bold;
+  margin-right: 5px;
+  color: var(--color-text);
 }
 
 .star {
-    color: #f6ad55;
-    font-size: 1rem;
+  font-size: 1.2em;
 }
 
+/* ===== Footer ===== */
+footer {
+  background-color: var(--color-secondary);
+  text-align: center;
+  padding: 10px 0;
+  color: var(--color-text);
+  font-size: 15px;
+  margin-top: 20px;
+}
 
+/* ===== Responsividade ===== */
+@media (max-width: 992px) {
+  .header-container {
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+
+  nav a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  .procura-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .opcoes {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #accounts-div {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .header-container {
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+
+  .form-input, 
+  .opcoes select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .opcoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #accounts-div {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,470 +1,670 @@
-/* --- Estilos para a Seção de Perfil (perfil.css) --- */
-/* Certifique-se de que este arquivo é LINKADO APÓS header.css no HTML */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* --- perfiltutor.css (copiar integralmente) --- */
 
+/* Basic Resets & Global Styles */
 body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  color: #39393b;
-  overflow-x: hidden;
+    font-family: Arial, sans-serif; /* Clean, readable sans-serif font */
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5; /* Light gray background for the page */
 }
 
-header {
-  background-color: #D3D6C5;
-  position: relative;
-  z-index: 10;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.header {
-  background-color: #D3D6C5;
+/* Navbar */
+.navbar {
+    background-color: #D3D6C5; /* White background for the header */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky; /* Makes the navbar stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 215px;
-  padding: 50px 0;
+.navbar-content {
+    display: flex; /* Uses flexbox for horizontal alignment */
+    justify-content: space-between; /* Distributes items with space between them */
+    align-items: center; /* Vertically centers items */
+    max-width: 1200px; /* Garante que o conteúdo não se espalhe demais em telas muito grandes */
+    margin: 0 auto; /* Centraliza o conteúdo da navbar */
+    padding: 0 20px; /* Adiciona padding nas laterais para não encostar nas bordas da janela */
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.navbar-left .logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007bff; /* Primary blue for branding */
+    text-decoration: none;
+    display: flex; /* Flexbox for icon and text alignment */
+    gap: 5px; /* Space between icon and text */
 }
 
-.logo-icon {
-  margin-right: 10px;
+.navbar-left .logo i {
+    font-size: 1.4em; /* Larger icon */
 }
 
-.nav-container {
-  display: flex;
-  align-items: center;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  margin-right: 50px;
-}
-
-nav a {
-  margin: 0 20px;
-  font-size: 16px;
-  color: #2E3B46;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #084fc7;
-}
-
-.search-icon {
-  margin-right: 20px;
-  cursor: pointer;
-  color: #2E3B46;
-  width: 24px;
-  height: 24px;
-}
-
-/* --- Perfil --- */
-.profile-section {
-  padding: 40px 215px;
-  background-color: #f9f9f9;
-}
-
-.profile-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.profile-image-container {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #D3D6C5;
-  flex-shrink: 0;
-}
-
-.profile-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile-name-edit {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.profile-name-edit h2 {
-  font-size: 32px;
-  color: #2C4066;
-  margin: 0;
-  font-weight: 700;
-}
-
-.edit-profile-btn {
-  background-color: #2C4066;
-  color: #FDF8EE;
-  padding: 8px 15px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.edit-profile-btn:hover {
-  background-color: #1f2c50;
-}
-
-.profile-details {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.details-column,
-.interests-column {
-  flex: 1;
-}
-
-.profile-details p {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #39393b;
-  line-height: 1.5;
-}
-
-.profile-details strong {
-  color: #2E3B46;
-}
-
-.interest-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.interest-tags span {
-  background-color: #D3D6C5;
-  color: #2E3B46;
-  padding: 5px 12px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* --- Seção de Aulas (cards) --- */
-.container_section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.class-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); /* Corrigido */
-  gap: 16px;
-  margin-top: 20px;
-  justify-content: center;
-}
-
-.temas_header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.topics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); /* Corrigido */
-  gap: 24px;
-}
-
-.topic-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.topic-card:hover {
-  transform: translateY(-5px);
-  cursor: pointer;
-}
-
-.card-image {
-  height: 180px;
-  overflow: hidden;
-  position: relative;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.category {
-  font-size: 0.85rem;
-  color: #ACACAC;
-  margin-bottom: 4px;
-}
-
-.category_title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #2e3b46;
-  margin-bottom: 8px;
-}
-
-.rating {
-  display: flex;
-  margin-bottom: 24px;
-}
-
-.star {
-  color: #ffa135;
-  margin-right: 2px;
-}
-
-.star.empty {
-  color: #acacac;
-}
-
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tutors {
-  display: flex;
-  align-items: center;
-  color: #ACACAC;
-  font-size: 0.9rem;
-}
-
-.tutors i {
-  margin-right: 8px;
-}
-
-.temas_btn {
-  background-color: #97A88B;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 8px 16px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.temas_btn:hover {
-  background-color: #809177;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .topics-grid,
-  .class-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .content_pub {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .feature_pub {
-    flex-direction: column;
+.navbar-center ul {
+    list-style: none;
+    display: flex; /* Este é o crucial! */
+    gap: 50px;
     align-items: center;
-    text-align: center;
-  }
-
-  .text-content_pub h1 {
-    font-size: 32px;
-  }
+    padding: 0;
+    margin-left: 30%; /* Pushes the center nav to the right */
 }
 
-/* Seção promocional */
-.pub {
-  background-color: #D3D6C5;
-  line-height: 1.6;
+.navbar-center ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #2E3B46; /* Dark grey for links */
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    white-space: nowrap; /* Add this line */
 }
 
-.background-icons_pub {
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0 0 60px;
+.navbar-center ul li a:hover {
+    color: #007bff; /* Changes color to primary blue on hover */
 }
 
-.content_pub {
-  display: flex;
-  height: 708px;
-  gap: 150px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+.navbar-right {
+    display: flex; /* Flexbox for icons and user profile */
+    align-items: center;
+    gap: 15px; /* Space between right-side elements */
+    position: relative; /* For dropdown positioning */
 }
 
-.illustration_pub {
-  flex: 1;
-  max-width: 500px;
-  position: relative;
+.navbar-right .icon-btn {
+    color: #2E3B46; /* Dark grey for icons */
+    font-size: 1.1em;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.illustration_pub img {
-  width: 100%;
-  height: auto;
-  margin-left: -80px;
+.navbar-right .icon-btn:hover {
+    color: #007bff; /* Changes color to primary blue on hover */
 }
 
-.text-content_pub {
-  flex: 1;
-  padding: 20px;
+.user-profile-dropdown {
+    position: relative; /* For dropdown positioning */
 }
 
-.text-content_pub h1 {
-  font-size: 69px;
-  font-weight: 800;
-  color: #2C4066;
-  margin-bottom: 30px;
-  line-height: 1.2;
+.user-avatar-btn {
+    display: flex; /* Flexbox for avatar and dropdown arrow */
+    align-items: center;
+    gap: 5px;
 }
 
-.feature_pub {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 30px;
-  gap: 15px;
-}
-
-.feature-icon_pub {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-icon_pub img {
-  width: 100%;
-  height: auto;
-}
-
-.feature-text_pub h3 {
-  font-size: 30px;
-  margin-bottom: 10px;
-  color: #2E3B46;
-}
-
-.feature-text_pub p {
-  font-size: 26px;
-  line-height: 1.5;
-  color: #2E3B46;
-}
-
-/* Menu dropdown no perfil */
-.profile-menu-container {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.profile-icon img {
-  width: 30px;
-  height: 30px;
-  display: block;
+.user-avatar-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Makes the avatar circular */
+    object-fit: cover;
+    border: 1px solid #ddd;
 }
 
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #D3D6C5;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-  top: 100%;
-  right: 0;
-  border-radius: 5px;
+    position: absolute;
+    top: 100%; /* Positions it directly below the avatar */
+    right: 0;
+    background-color: #D3D6C5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    padding: 10px 0;
+    z-index: 100;
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.dropdown-menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.dropdown-menu.show {
+    display: block; /* Shown when 'show' class is added by JS */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.dropdown-menu ul li a {
-  color: #2E3B46;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  white-space: nowrap;
+.dropdown-menu .user-info-header {
+    display: flex;
+    gap: 10px;
 }
 
-.dropdown-menu ul li a:hover {
-  color: #084fc7;
-  box-shadow: none;
+.dropdown-menu .header-profile-pic {
+    width: 40px; /* Tamanho da imagem de perfil */
+    height: 40px;
+    margin-left: 5px;
+    object-fit: cover; /* Garante que a imagem preenche o espaço sem distorcer */
 }
 
-.profile-menu-container:hover .dropdown-menu {
-  display: block;
+.dropdown-menu .header-username {
+    font-weight: bold;
+    color: #333;
+    margin-top: 13px;
+    font-size: 12px; /* Tamanho da fonte do nome de utilizador */
+}
+
+.dropdown-separator {
+    background-color: #2E3B46; /* Cor do separador */
+    width: 90%;
+    opacity: 100%;
+}
+
+.dropdown-menu a img {
+    width: 18px;  /* Diminua a largura da imagem para o tamanho desejado (ex: 18px) */
+    height: 18px; /* Diminua a altura da imagem para o tamanho desejado (mantenha o mesmo valor para proporção) */
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar ou distorcer */
+    flex-shrink: 0; /* Impede que a imagem encolha em layouts flexíveis */
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Responsiveness for Navbar */
+@media (max-width: 992px) {
+    .navbar-center ul {
+        gap: 15px; /* Adjust spacing for tablet size */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: center; /* Centers items when wrapped */
+        gap: 15px;
+    }
+
+    .navbar-center ul {
+        width: 100%; /* Navigation takes full width */
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .navbar-right {
+        margin-top: 10px; /* Moves right icons below if content wraps */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-center ul {
+        flex-direction: column; /* Stacks navigation links vertically */
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* User Profile Section */
+.user-profile-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center; /* Align items to the top for details */
+    padding: 30px;
+    padding-left: 20px; /* Padding left for better spacing */
+    max-width: 5000px; /* Limit width as in image */
+}
+
+.profile-main-info {
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 200px;
+    margin-right: 20px;
+    min-width: 150px; /* Por exemplo, a largura do avatar + padding */
+    padding-right: 0;
+    margin-left: 5%; /* Experimente com este valor (ex: 50px, 80px, 100px) */
+    display: flex;
+    flex-direction: column; /* Para empilhar a imagem e o nome um em cima do outro */
+    justify-content: center; /* Centraliza verticalmente os itens dentro deste contêiner */
+    align-items: center; /* Centraliza horizontalmente os itens dentro deste contêiner */
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 50px #2E3B46; /* Adicionar sombra ao redor do círculo */
+}
+
+.profile-avatar img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Ensures no extra space below the image */
+}
+
+.profile-name {
+    font-size: 25px;
+    color: #2C4066;
+    margin: 0;
+    line-height: 1.2; /* Pode ajustar para controlar a altura da caixa de texto */
+}
+
+.profile-divider {
+    width: 7px;
+    background-color: #2C4066;
+    height: 180px; /* Adjust height based on content */
+    margin-right: 5%; /* Adiciona um espaço à direita do divisor antes dos detalhes */
+    margin-left: 10%;
+}
+
+.profile-details {
+    flex-grow: 1; /* Allow details to take remaining space */
+    padding-left: 5px;
+    padding-right: 20px;
+    min-width: 250px; /* Exemplo: Defina uma largura mínima para o texto, para que ele não se comprima muito */
+    flex-basis: auto; /* Permite que o item decida seu próprio tamanho base */
+}
+
+.profile-details p {
+    margin-bottom: 8px;
+    color: #2E3B46;
+    font-size: 0.95em;
+    margin-top: 0; 
+}
+
+.profile-details p strong {
+    color: #333;
+}
+
+.profile-details .highlight {
+    background-color: #2C4066; /* Light blue background for highlight */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #D3D6C5;
+}
+
+.profile-history {
+    margin-top: 15px;
+    color: #666;
+    line-height: 1.5;
+    max-height: 90px; /* Limit height for history text */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    text-align: center; /* Justify text for better readability */
+    margin-left: 0; /* Garante que não haja margem esquerda indesejada */
+    margin-right: 0; /* Garante que não haja margem direita indesejada */
+}
+
+.profile-details .profile-history { /* Mais específico */
+    font-size: 0.8em;
+}
+
+.edit-profile-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #aabee4;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-left: 45%;
+    text-decoration: underline; /* Adiciona sublinhado ao link */
+}
+
+.edit-profile-link:hover {
+    color: #0056b3;
+}
+
+/* Section Headers (Aulas, Relatórios Semanais, Reviews) */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0 40px; /* Mantém a margem do topo e ajusta a de baixo */
+}
+
+.section-header hr {
+    width: 100%;
+    flex-grow: 1;
+    border: none;
+    border-top: 5px solid #AAB18E;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2em;
+    color: #2E3B46;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: normal;
+    font-family: Jost, sans-serif;
+}
+
+/* Class Cards Section */
+.classes-section.container {
+    text-align: center; /* Centraliza o h2 e o ver-mais-container dentro da section */
+    padding-bottom: 40px; /* Adiciona padding na parte inferior da seção */
+}
+
+.class-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px; /* Espaço entre os cartões e o link 'Ver Mais' */
+    justify-content: center; /* Centraliza os itens na grid, se houver espaço extra */
+}
+
+.class-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    padding: 15px; /* Define um padding geral para o cartão */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o rodapé para baixo */
+    min-height: 400px; /* Ajusta a altura mínima do cartão das aulas para ser mais consistente com a imagem */
+}
+
+.class-card img {
+    width: 100%;
+    height: 180px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    border-radius: 8px; /* Arredonda todos os cantos da imagem */
+    margin-bottom: 10px;
+}
+
+.class-card h3 {
+    font-size: 1.2em;
+    color: #2E3B46;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.class-card p {
+    font-size: 0.9em;
+    color: #2E3B46;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.class-card .category-text {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.class-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px; /* Espaço acima do rodapé */
+    margin-top: auto; /* Empurra o rodapé para a parte inferior do cartão */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.class-card-footer .tutor-rating-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.class-card-footer .tutor-rating-info p,
+.class-card-footer .tutor-rating-info .rating {
+    margin: 0;
+    padding: 0;
+}
+
+.class-card .rating {
+    font-size: 0.9em;
+    color: #2E3B46;
+    font-style: normal;
+    font-weight: 600;
+    display: flex; /* Para alinhar o texto "Avaliação" com as estrelas */
+    align-items: center;
+    gap: 5px; /* Espaço entre o texto e as estrelas */
+}
+
+.class-card .rating img {
+    height: 10px; /* Altura das estrelas */
+    width: auto;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+.class-card .btn-buy {
+    background-color: #AAB18E;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.class-card .btn-buy:hover {
+    background-color: #2C4066;
+    color: #fff;
+}
+
+/* Report Cards Section */
+.reports-section.container {
+    text-align: center; /* Centraliza o h2 e o ver-mais-container dentro da section */
+    padding-bottom: 40px; /* Adiciona padding na parte inferior da seção */
+}
+
+.report-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px; /* Espaço entre os cartões e o link 'Ver Mais' */
+    justify-content: center;
+}
+
+.report-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px; /* Define um padding geral para o cartão */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px; /* Ajusta a altura mínima do cartão dos relatórios */
+}
+
+.report-card img {
+    width: 100%;
+    height: 180px; /* Altura fixa para as imagens de relatório */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.report-card h3 {
+    font-size: 1.1em;
+    color: #2E3B46;
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+    font-style: normal;
+    font-weight: 600;
+    flex-grow: 1; /* Permite que o título ocupe o espaço disponível antes do botão */
+}
+
+.report-card .btn-view-more {
+    background-color: #AAB18E;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin: 0 auto; /* Centraliza o botão */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: center;
+    width: calc(100% - 30px);
+    max-width: 150px;
+}
+
+.report-card .btn-view-more:hover {
+    background-color: #2e3b46;
+    color: #fff;
+}
+
+/* Styling for the 'Ver Mais' link container */
+.ver-mais-container {
+    text-align: center; /* Centraliza o link inline-block dentro desta div */
+    margin-top: 30px; /* Espaço entre os cartões e o link 'Ver Mais' */
+    margin-bottom: 60px; /* Espaço antes da próxima seção/rodapé */
+}
+
+.ver-mais-link {
+    display: inline-block;
+    text-decoration: underline;
+    color: #aabee4;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 0;
+    border-radius: 0;
+    transition: color 0.3s ease;
+}
+
+.ver-mais-link:hover {
+    color: #0056b3;
+    background-color: transparent;
 }
 
 /* Footer */
 footer {
-  background-color: #D3D6C5;
-  text-align: center;
-  padding: 10px;
-  margin-top: auto;
-  color: #2E3B46;
-  font-size: 15px;
+    background-color: #D3D6C5; /* Match body background for consistency */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.90em;
+    color: #2E3B46;
+    border-top: 1px solid #eee; /* Subtle top border */
 }
 
-.review-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+/* Responsiveness */
+@media (max-width: 992px) {
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-divider {
+        display: none; /* Hide vertical divider on smaller screens */
+    }
+
+    .profile-details {
+        padding-left: 0;
+    }
+
+    .profile-main-info {
+        width: auto;
+    }
+
+    .navbar-center ul {
+        gap: 15px;
+    }
+
+    .class-cards,
+    .report-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
-.review-info .divider {
-  height: 1px;
-  background-color: #ccc;
-  width: 100%;
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar-center ul {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .section-header h2 {
+        font-size: 1.8em;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .class-card h3, .report-card h3 {
+        font-size: 1.1em;
+    }
 }
 
+@media (max-width: 480px) {
+    .navbar-center ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5em;
+    }
+
+    .class-cards,
+    .report-cards {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .class-card .btn-view-more,
+    .report-card .btn-view-more {
+        width: auto;
+        max-width: unset; /* Remove max-width on mobile */
+        display: block; /* Make button block level */
+        text-align: center;
+    }
+}

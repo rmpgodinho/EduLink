@@ -48,7 +48,7 @@
   <!-- Conteúdo principal na mesma estrutura de container usada pela Agenda -->
   <main class="agenda-container">
     <h1>Agendar Sessão</h1>
-    <form id="booking-form">
+    <form id="booking-form" action="agenda_aluno.html" method="GET">
       <!-- 1. Informações do Tutor -->
       <section class="card section-light">
         <h2><span class="step">1</span> Informações do Tutor</h2>
@@ -118,20 +118,21 @@
 
       <!-- 4. Resumo / Pagamento -->
       <aside class="summary-card">
-        <h3>Resumo:</h3>
-        <p><strong>Tutor:</strong> <span id="sum-tutor-name">Beatriz Sousa</span></p>
-        <p><strong>Preço por sessão:</strong> <span id="sum-price">5€</span></p>
-        <p><strong>Nº de sessões:</strong> <span id="sum-hours">1</span></p>
-        <p><strong>Dia:</strong> <span id="sum-date">__/__/____</span></p>
-        <p><strong>Hora:</strong> <span id="sum-time">__:__</span></p>
-        <p><strong>Email:</strong> <span id="sum-email">—</span></p>
-        <hr>
-        <p class="total-label">Total:</p>
-        <p class="total-amount" id="sum-total">5,00€</p>
-        <button type="submit" class="btn-submit">Concluir</button>
-      </aside>
-    </form>
-  </main>
+      <h3>Resumo:</h3>
+      <p><strong>Tutor:</strong> <span id="sum-tutor-name">Beatriz Sousa</span></p>
+      <p><strong>Preço por sessão:</strong> <span id="sum-price">5€</span></p>
+      <p><strong>Nº de sessões:</strong> <span id="sum-hours">1</span></p>
+      <p><strong>Dia:</strong> <span id="sum-date">__/__/____</span></p>
+      <p><strong>Hora:</strong> <span id="sum-time">__:__</span></p>
+      <p><strong>Email:</strong> <span id="sum-email">—</span></p>
+      <hr>
+      <p class="total-label">Total:</p>
+      <p class="total-amount" id="sum-total">5,00€</p>
+      <!-- Removemos o <a> e deixamos apenas o submit -->
+      <button type="submit" class="btn-submit">Concluir</button>
+    </aside>
+  </form>
+</main>
 
   <!-- Footer idêntico ao da Agenda -->
   <footer>

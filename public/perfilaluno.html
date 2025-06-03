@@ -2,286 +2,237 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Perfil - Edulink</title>
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/perfilaluno.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edulink – Perfil do Aluno</title>
+  <link rel="stylesheet" href="css/perfiltutor.css">
+  <link rel="stylesheet" href="css/perfil_tutor_vista_aluno.css">
+
 </head>
 <body>
-
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <div class="logo-icon">
-          <img src="images/image-removebg-preview 6.svg" alt="Logo">
-        </div>
+  <!-- Header (igual ao do tutor) -->
+  <header class="navbar">
+    <div class="container navbar-content">
+      <div class="navbar-left">
+        <a href="index.html" class="logo">
+          <img src="images/image-removebg-preview 6.svg" alt="Logo Edulink" class="logo-img">
+        </a>
       </div>
-
-      <div class="nav-container">
-        <nav>
-          <a href="index.html">Início</a>
-          <a href="index.html#tutors">Tutores</a>
-          <a href="index.html#testimonials">Alunos</a>
-          <a href="index.html#about">Sobre nós</a>
-          <a href="index.html#team">Equipa</a>
-          <a href="formulario.html">Queres ser tutor?</a>
-        </nav>
-        <div class="profile-menu-container">
-          <div class="profile-icon">
-            <img src="images/icon.svg" alt="Ícone de Perfil">
-          </div>
+      <nav class="navbar-center">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#tutors">Tutores</a></li>
+          <li><a href="index.html#testimonials">Alunos</a></li>
+          <li><a href="index.html#about">Sobre nós</a></li>
+          <li><a href="index.html#team">Equipa</a></li>
+        </ul>
+      </nav>
+      <div class="navbar-right">
+        <div class="user-profile-dropdown">
+          <a href="#" class="icon-btn user-avatar-btn">
+            <img src="images/mariana.svg" alt="Avatar do Aluno" class="user-avatar-icon">
+            <i class="fas fa-chevron-down"></i>
+          </a>
           <div class="dropdown-menu">
-            <ul>
-              <li><a href="perfilaluno.html">Meu Perfil</a></li>
-              <li><a href="procurartutor.html">Procurar Tutor</a></li>
-              <li><a href="agenda_aluno.html">Agenda</a></li>
-              <li><a href="chat_aluno.html">Chat</a></li>
-              <li><a href="entrar.html">Sair</a></li>
-            </ul>
+            <div class="user-info-header">
+              <img src="images/mariana.svg" alt="Foto de Perfil de Beatriz Sousa" class="header-profile-pic">
+              <span class="header-username">Beatriz Sousa</span>
+            </div>
+            <hr class="dropdown-separator">
+            <div class="dropdown-links">
+              <a href="perfilaluno.html"><img src="images/icon.svg" alt=""> Perfil</a>
+              <a href="procurartutor.html"><img src="images/notificacoes.png" alt=""> Procurar Tutor</a>
+              <a href="agenda_aluno.html"><img src="images/calendario.png" alt=""> Agenda</a>
+              <a href="chat_aluno.html"><img src="images/chat.png" alt=""> Chat</a>
+              <a href="entrar.html"><img src="images/sair.png" alt=""> Sair</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-<section class="profile-section">
-    <div class="profile-card">
-        <div class="profile-header">
-            <div class="profile-image-container">
-                <img src="images/mariana.svg" alt="Foto de Perfil de Mariana Gonçalves">
-            </div>
-            <div class="profile-name-edit">
-                <h2>Mariana Gonçalves</h2>
-                <a href="#" class="edit-profile-btn">Editar Perfil</a>
-            </div>
+  <main>
+    <!-- Seção de Perfil do Aluno -->
+    <section class="user-profile-section container">
+      <div class="profile-card">
+        <div class="profile-main-info">
+          <div class="profile-avatar">
+            <img src="images/mariana.svg" alt="Beatriz Sousa">
+          </div>
+          <h2 class="profile-name">Beatriz Sousa</h2>
         </div>
+        <div class="profile-divider"></div>
         <div class="profile-details">
-            <div class="details-column">
-                <p><strong>Idade:</strong> 19 anos</p>
-                <p><strong>Nível de Ensino:</strong> Superior</p>
-                <p><strong>Objetivo:</strong> Melhorar resultados para os exames na universidade</p>
-            </div>
-            <div class="interests-column">
-                <p><strong>Áreas de interesse:</strong></p>
-                <div class="interest-tags">
-                    <span>História</span>
-                    <span>Japonês</span>
-                    <span>Português</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="temas">
-    <div class="temas_container">
-        <div class="temas_header">
-            <h1>Aulas já frequentadas</h1>
-        </div>
-        <div class="class-cards-grid">
-            <div class="topic-card">
-                <div class="card-image">
-                    <img src="images/japones.svg" alt="Japonês - Linguas">
-                </div>
-                <div class="card-content">
-                    <div class="category">Linguas</div>
-                    <h3 class="category_title">Japonês - Nível I</h3>
-                    <div class="rating">
-                        <img src="images/5 estrelas.svg" alt="5 estrelas">
-                    </div>
-                    <div class="card-footer">
-                        <div class="tutors">
-                            <i class="fas fa-users"></i>
-                            <span>Tutor: Haruki Tanaka</span>
-                        </div>
-                        <button class="temas_btn">Ver mais...</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-image">
-                    <img src="images/e72be18e72c95091ed4d9556c4b436fa919efa99.png" alt="Japonês - Linguas">
-                </div>
-                <div class="card-content">
-                     <div class="category">Linguas</div>
-                    <h3 class="category_title">Japonês - Nível II</h3>
-                    <div class="rating">
-                        <img src="images/5 estrelas.svg" alt="5 estrelas">
-                    </div>
-                    <div class="card-footer">
-                        <div class="tutors">
-                            <i class="fas fa-users"></i>
-                            <span>Tutor: Haruki Tanaka</span>
-                        </div>
-                        <button class="temas_btn">Ver mais...</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-image">
-                    <img src="images/historia.svg" alt="Matemática - Trigonometria">
-                </div>
-                <div class="card-content">
-                    <div class="category">História</div>
-                    <h3 class="category_title">A 1ª Guerra Mundial</h3>
-                    <div class="rating">
-                        <img src="images/5 estrelas.svg" alt="5 estrelas">
-                    </div>
-                    <div class="card-footer">
-                        <div class="tutors">
-                            <i class="fas fa-users"></i>
-                            <span>Tutor: Leandro Martins</span>
-                        </div>
-                        <button class="temas_btn">Ver mais...</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="temas">
-    <div class="temas_container">
-        <div class="temas_header">
-            <h1>Algumas Recomendações</h1>
-        </div>
-        <div class="class-cards-grid">
-            <div class="topic-card">
-                <div class="card-image">
-                    <img src="images/4d75841648e6fc2f4ccbd91ae31d4a8708a567e5.jpg" alt="Matemática - Trigonometria">
-                </div>
-                <div class="card-content">
-                    <div class="category">História</div>
-                    <h3 class="category_title">A Revolução Francesa</h3>
-                    <div class="rating">
-                        <img src="images/5 estrelas.svg" alt="5 estrelas">
-                    </div>
-                    <div class="card-footer">
-                        <div class="tutors">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <button class="temas_btn">Ver mais...</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-image">
-                    <img src="images/ad47836c472753419cc02e7e9d94de8229c9bf43.jpg" alt="Japonês - Nível II">
-                </div>
-                <div class="card-content">
-                    <div class="category">Linguas</div>
-                    <h3 class="category_title">Português</h3>
-                    <div class="rating">
-                        <img src="images/5 estrelas.svg" alt="5 estrelas">
-                    </div>
-                    <div class="card-footer">
-                        <div class="tutors">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <button class="temas_btn">Ver mais...</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-image">
-                    <img src="images/japones.svg" alt="Japonês - Nível II">
-                </div>
-                <div class="card-content">
-                    <div class="category">Linguas</div>
-                    <h3 class="category_title">Japonês - Nível II</h3>
-                    <div class="rating">
-                        <img src="images/5 estrelas.svg" alt="5 estrelas">
-                    </div>
-                    <div class="card-footer">
-                        <div class="tutors">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <button class="temas_btn">Ver mais...</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="temas">
-  <div class="temas_container">
-    <div class="temas_header">
-      <h1>As Tuas Reviews</h1>
-    </div>
-    <div class="class-cards-grid">
-      <div class="topic-card">
-        <div class="card-content">
-          <div class="category">“O explicador tem bons conhecimentos e explica bem, mas às vezes falta alguma organização nas aulas. Mesmo assim, tem sido útil para melhorar a minha escrita."</div>
-          <div class="rating">
-            <img src="images/mariana.svg" alt="Mariana Gonçalves">
-            <p>Mariana Gonçalves</p>
-          </div>
-          <div class="card-footer">
-            <div class="tutors">
-              <i class="fas fa-users"></i>
-              <div class="review-info">
-                <span>Aula: Português</span>
-                <span class="divider"></span>
-                <span>Tutor: Leandro Martins</span>
-              </div>
-            </div>
-            <button class="temas_btn">Ver mais...</button>
-          </div>
+          <p><strong>Idade:</strong> 19 anos</p>
+          <p><strong>Nível de Ensino:</strong> Superior</p>
+          <p><strong>Objetivo:</strong> Melhorar resultados para os exames na universidade</p>
+          <p><strong>Áreas de Interesse:</strong> <span class="highlight">História</span>, <span class="highlight">Japonês</span>, <span class="highlight">Português</span></p>
+          <p class="profile-history">“Estou sempre em busca de novas formas de aprender. Gosto de História e de línguas, e procuro sessões personalizadas para reforçar a minha preparação para exames.”</p>
+          <a href="#" class="edit-profile-link">Editar Perfil</a>
         </div>
       </div>
+    </section>
 
-      <div class="topic-card">
-        <div class="card-content">
-          <div class="category">“O tutor é super claro a explicar e tem muito conhecimento sobre a língua e cultura. As aulas são bem organizadas e divertidas — sinto que já evoluí imenso na pronúncia e vocabulário.”</div>
-          <div class="rating">
-            <img src="images/mariana.svg" alt="Mariana Gonçalves">
-            <p>Mariana Gonçalves</p>
-          </div>
-          <div class="card-footer">
-            <div class="tutors">
-              <i class="fas fa-users"></i>
-              <div class="review-info">
-                <span>Aula: Japonês - Nível II</span>
-                <span class="divider"></span>
-                <span>Tutor: Haruki Tanaka</span>
-              </div>
-            </div>
-            <button class="temas_btn">Ver mais...</button>
-          </div>
+    <!-- Seção: Aulas já frequentadas -->
+    <section class="classes-section container">
+      <div class="section-header">
+        <hr>
+        <h2>Aulas já Frequentadas</h2>
+      </div>
+      <div class="class-cards">
+        <div class="class-card">
+          <img src="images/japones.svg" alt="Japonês – Nível I">
+          <p class="category-text">Línguas</p>
+          <h3>Japonês – Nível I</h3>
+          <p>Tutor: Haruki Tanaka</p>
+          <div class="rating">Avaliação: <img src="images/5 estrelas.svg" alt="5 estrelas"></div>
+        </div>
+        <div class="class-card">
+          <img src="images/historia.svg" alt="A 1ª Guerra Mundial">
+          <p class="category-text">História</p>
+          <h3>A 1ª Guerra Mundial</h3>
+          <p>Tutor: Leandro Martins</p>
+          <div class="rating">Avaliação: <img src="images/4 estrelas.svg" alt="4 estrelas"></div>
+        </div>
+        <div class="class-card">
+          <img src="images/e72be18e72c95091ed4d9556c4b436fa919efa99.png" alt="Japonês – Nível II">
+          <p class="category-text">Línguas</p>
+          <h3>Japonês – Nível II</h3>
+          <p>Tutor: Haruki Tanaka</p>
+          <div class="rating">Avaliação: <img src="images/5 estrelas.svg" alt="5 estrelas"></div>
         </div>
       </div>
+      <div class="ver-mais-container">
+        <a href="#" class="ver-mais-link">Ver Mais</a>
+      </div>
+    </section>
 
-      <div class="topic-card">
-        <div class="card-content">
-          <div class="category">“As aulas são sempre muito bem preparadas e explicadas com entusiasmo. O tutor consegue relacionar os temas com o presente, o que torna tudo mais interessante.”</div>
-          <div class="rating">
-            <img src="images/mariana.svg" alt="Mariana Gonçalves">
-            <p>Mariana Gonçalves</p>
-          </div>
-          <div class="card-footer">
-            <div class="tutors">
-              <i class="fas fa-users"></i>
-              <div class="review-info">
-                <span>Aula: A 1ª Guerra Mundial</span>
-                <span class="divider"></span>
-                <span>Tutor: Catarina Machado</span>
-              </div>
-            </div>
-            <button class="temas_btn">Ver mais...</button>
-          </div>
+    <!-- Seção: Recomendações -->
+    <section class="reports-section container">
+      <div class="section-header">
+        <hr>
+        <h2>Recomendações</h2>
+      </div>
+      <div class="report-cards">
+        <div class="report-card">
+          <img src="images/ad47836c472753419cc02e7e9d94de8229c9bf43.jpg" alt="Revolução Francesa">
+          <h3>A Revolução Francesa</h3>
+          <button class="btn-view-more">Ver Mais</button>
         </div>
+        <div class="report-card">
+          <img src="images/4d75841648e6fc2f4ccbd91ae31d4a8708a567e5.jpg" alt="Português">
+          <h3>Português Avançado</h3>
+          <button class="btn-view-more">Ver Mais</button>
+        </div>
+        <div class="report-card">
+          <img src="images/japones.svg" alt="Japonês – Nível II">
+          <h3>Japonês – Nível II</h3>
+          <button class="btn-view-more">Ver Mais</button>
+        </div>
+      </div>
+      <div class="ver-mais-container">
+        <a href="#" class="ver-mais-link">Ver Mais</a>
+      </div>
+    </section>
+
+    <!-- Seção: Minhas Reviews -->
+    <!-- =========================
+     Seção: As Minhas Reviews
+     ========================= -->
+<section class="reviews-section container">
+  <h1>As Minhas Reviews</h1>
+  <div class="review-cards-container">
+    <!-- 1ª Review -->
+    <div class="review-card">
+      <p class="review-text">
+        “O explicador tem bons conhecimentos e explica bem, mas às vezes falta
+        alguma organização nas aulas. Mesmo assim, tem sido útil para melhorar
+        a minha escrita.”
+      </p>
+      <div class="reviewer-info">
+        <img src="images/mariana.svg" alt="Avatar de Beatriz Sousa">
+        <div class="reviewer-details">
+          <span class="reviewer-name">Beatriz Sousa</span>
+          <p class="class-taught">Aula: Português</p>
+        </div>
+      </div>
+      <hr class="review-divider">
+      <div class="star-rating">
+        <img src="images/5-estrelas.png" alt="5 estrelas">
+      </div>
+    </div>
+
+    <!-- 2ª Review -->
+    <div class="review-card">
+      <p class="review-text">
+        “As aulas de Japonês são bem organizadas e divertidas — sinto que já
+        evoluí muito na pronúncia e vocabulário.”
+      </p>
+      <div class="reviewer-info">
+        <img src="images/mariana.svg" alt="Avatar de Beatriz Sousa">
+        <div class="reviewer-details">
+          <span class="reviewer-name">Beatriz Sousa</span>
+          <p class="class-taught">Aula: Japonês – Nível II</p>
+        </div>
+      </div>
+      <hr class="review-divider">
+      <div class="star-rating">
+        <img src="images/5-estrelas.png" alt="5 estrelas">
+      </div>
+    </div>
+
+    <!-- 3ª Review -->
+    <div class="review-card">
+      <p class="review-text">
+        “As aulas de História são sempre muito bem preparadas e explicadas com
+        entusiasmo. O tutor relaciona os temas com o presente, tornando tudo mais
+        interessante.”
+      </p>
+      <div class="reviewer-info">
+        <img src="images/mariana.svg" alt="Avatar de Beatriz Sousa">
+        <div class="reviewer-details">
+          <span class="reviewer-name">Beatriz Sousa</span>
+          <p class="class-taught">Aula: A 1ª Guerra Mundial</p>
+        </div>
+      </div>
+      <hr class="review-divider">
+      <div class="star-rating">
+        <img src="images/5-estrelas.png" alt="5 estrelas">
       </div>
     </div>
   </div>
+
+  <div class="ver-mais-container">
+    <a href="#" class="ver-mais-link">Ver Mais</a>
+  </div>
 </section>
 
-<footer>
-  Copyright © Edulink 2025
-</footer>
+  </main>
 
+  <!-- Footer (igual ao do tutor) -->
+  <footer>
+    <div class="container">
+      <p>Copyright © Edulink 2025</p>
+    </div>
+  </footer>
+
+  <!-- Script para dropdown (idêntico ao do tutor) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const userDropdown = document.querySelector('.user-profile-dropdown');
+      const dropdownMenu = userDropdown.querySelector('.dropdown-menu');
+
+      userDropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdownMenu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', function(event) {
+        if (!userDropdown.contains(event.target)) {
+          dropdownMenu.classList.remove('show');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

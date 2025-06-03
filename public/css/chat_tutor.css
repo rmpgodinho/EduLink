@@ -1,3 +1,9 @@
+/* ======================================
+   chat_tutor.css
+   CSS completo para a página de Chat do Tutor
+   ====================================== */
+
+/* Fonte Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -9,8 +15,12 @@
   --bg-student-bubble: #fff;
   --text-main: #333;
   --text-light: #fff;
+  --color-text: #2E3B46;
+  --color-accent: #084fc7;
+  --color-secondary: #D3D6C5;
 }
 
+/* ===== Reset e estilos globais ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,77 +36,95 @@ body {
   min-height: 100vh;
 }
 
-header {
-  background-color: #D3D6C5;
+/* ======================================
+   Navbar (header) para Chat do Tutor
+   ====================================== */
+
+header.navbar {
+  background-color: var(--color-secondary);
   position: relative;
   z-index: 10;
 }
 
-.header-container {
+/* Container interno da navbar */
+header.navbar .navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 215px;
-  padding: 50px 0;
+  margin: 0 215px;    /* Ajuste conforme layout desejado */
+  padding: 20px 0;
 }
 
-.logo {
+/* ===== Logo (lado esquerdo) ===== */
+header.navbar .navbar-left .logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  text-decoration: none;
 }
 
-.logo-icon {
-  margin-right: 10px;
+/* Aumentámos a largura do logo para 100px */
+header.navbar .navbar-left .logo img {
+  width: 100px;
+  height: auto;
+  display: block;
 }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
-  color: #2E3B46;
-}
-
-.nav-container {
+/* ===== Menu central ===== */
+header.navbar .navbar-center ul {
   display: flex;
+  list-style: none;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  margin: 0 50px 0 0;
-}
-
-nav a {
+header.navbar .navbar-center ul li {
   margin: 0 20px;
+}
+
+header.navbar .navbar-center ul li a {
   font-size: 16px;
-  color: #2E3B46;
+  color: var(--color-text);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #084fc7;
+header.navbar .navbar-center ul li a:hover {
+  color: var(--color-accent);
 }
 
-.profile-menu-container {
+/* ===== Dropdown de perfil (lado direito) ===== */
+header.navbar .user-profile-dropdown {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
-  cursor: pointer;
 }
 
-.profile-icon img {
+header.navbar .user-profile-dropdown .user-avatar-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header.navbar .user-profile-dropdown .user-avatar-icon {
   width: 30px;
   height: 30px;
-  display: block;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.dropdown-menu {
+header.navbar .user-profile-dropdown .user-avatar-btn i {
+  margin-left: 5px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* Dropdown invisível por omissão */
+header.navbar .user-profile-dropdown .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #D3D6C5;
+  background-color: var(--color-secondary);
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
@@ -105,34 +133,106 @@ nav a:hover {
   border-radius: 5px;
 }
 
-.dropdown-menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+/* Mostrar dropdown ao passar o rato */
+header.navbar .user-profile-dropdown:hover .dropdown-menu {
+  display: block;
 }
 
-.dropdown-menu ul li a {
-  color: #2E3B46;
-  padding: 12px 16px;
+/* Cabeçalho interno do dropdown (foto + nome) */
+header.navbar .user-profile-dropdown .user-info-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+header.navbar .user-profile-dropdown .user-info-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+header.navbar .user-profile-dropdown .user-info-header .header-username {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Linha separadora */
+header.navbar .user-profile-dropdown .dropdown-separator {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 5px 0;
+}
+
+/* Lista de links do dropdown */
+header.navbar .user-profile-dropdown .dropdown-links {
+  display: flex;
+  flex-direction: column;
+}
+
+header.navbar .user-profile-dropdown .dropdown-links a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: var(--color-text);
   text-decoration: none;
-  display: block;
-  white-space: nowrap;
+  transition: background-color 0.2s ease;
 }
 
-.dropdown-menu ul li a:hover {
-  color: #084fc7;
+header.navbar .user-profile-dropdown .dropdown-links a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.profile-menu-container:hover .dropdown-menu {
-  display: block;
+header.navbar .user-profile-dropdown .dropdown-links a:hover {
+  background-color: #e2e5d4;
 }
 
+/* ===== Responsividade ===== */
+@media (max-width: 992px) {
+  header.navbar .navbar-content {
+    margin: 0 20px;
+    padding: 15px 0;
+  }
+  /* Esconder menu central em telas pequenas */
+  header.navbar .navbar-center {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header.navbar .navbar-content {
+    margin: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  header.navbar .navbar-left,
+  header.navbar .navbar-right {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header.navbar .navbar-left .logo img {
+    width: 80px; /* pode ajustar ainda mais para ecrãs muito pequenos */
+  }
+  header.navbar .user-profile-dropdown .user-avatar-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* ===== Container principal do chat ===== */
 .chat-container {
   flex: 1;
   display: flex;
   overflow: hidden;
 }
 
+/* ===== Sidebar ===== */
 .sidebar {
   width: 250px;
   background: var(--bg-sidebar);
@@ -140,17 +240,21 @@ nav a:hover {
   flex-direction: column;
 }
 
+/* Título “Mensagens” */
 .messages-title {
   padding: 15px;
   font-weight: bold;
+  color: var(--color-text);
 }
 
+/* Lista de contatos */
 .contacts {
   list-style: none;
   flex: 1;
   overflow-y: auto;
 }
 
+/* Cada contato */
 .contact {
   display: flex;
   align-items: center;
@@ -171,20 +275,33 @@ nav a:hover {
   background: var(--bg-contact-selected);
 }
 
+/* ===== Avatar dentro do contato ===== */
 .avatar {
   width: 40px;
   height: 40px;
-  background: #ccc;
   border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
   margin-right: 10px;
+  background-color: #ccc; /* cor de fundo enquanto carrega */
 }
 
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Rodapé da sidebar */
 .sidebar-footer {
   padding: 15px;
   font-size: 0.8rem;
   text-align: center;
+  color: var(--color-text);
 }
 
+/* ===== Área de chat ===== */
 .chat {
   flex: 1;
   background: #fff;
@@ -192,23 +309,28 @@ nav a:hover {
   flex-direction: column;
 }
 
+/* Cabeçalho do chat */
 .chat-header {
-  background: var(--bg-chat-header);
-  padding: 20px;
   display: flex;
   align-items: center;
+  background: var(--bg-chat-header);
+  padding: 20px;
 }
 
+/* Avatar no cabeçalho */
 .chat-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin-right: 20px;
+  object-fit: cover;
 }
 
+/* Informações do usuário no cabeçalho */
 .chat-user-info h2 {
   margin-bottom: 5px;
   font-size: 1.5rem;
+  color: var(--color-text);
 }
 
 .chat-user-info p {
@@ -216,6 +338,7 @@ nav a:hover {
   color: #444;
 }
 
+/* Mensagens */
 .chat-messages {
   flex: 1;
   padding: 20px;
@@ -251,6 +374,7 @@ nav a:hover {
   border-bottom-left-radius: 5px;
 }
 
+/* Timestamp dentro da bolha */
 .bubble .timestamp {
   display: block;
   font-size: 0.75rem;
@@ -259,6 +383,7 @@ nav a:hover {
   text-align: right;
 }
 
+/* Input de envio */
 .chat-input {
   padding: 10px;
   background: #eef2f5;
@@ -282,13 +407,50 @@ nav a:hover {
   cursor: pointer;
 }
 
+/* ===== Footer ===== */
 footer {
-  background-color: #D3D6C5;
+  background-color: var(--color-secondary);
   text-align: center;
   padding: 10px;
-  color: #2E3B46;
+  color: var(--color-text);
   font-size: 15px;
   margin-top: auto;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 992px) {
+  .header-container {
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .chat-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 200px;
+    order: 1;
+  }
+
+  .chat {
+    order: 2;
+  }
+
+  .contact {
+    margin: 5px 5px;
+    padding: 8px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -296,18 +458,44 @@ footer {
     margin: 0 20px;
     padding: 20px 0;
   }
+
   nav {
     display: none;
   }
+
   .chat-container {
     flex-direction: column;
   }
+
   .sidebar {
     width: 100%;
-    height: 200px;
+    height: 180px;
     order: 1;
   }
+
   .chat {
     order: 2;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    margin: 3px 3px;
+    padding: 6px;
+  }
+
+  .avatar {
+    width: 25px;
+    height: 25px;
+  }
+
+  .chat-avatar {
+    width: 60px;
+    height: 60px;
   }
 }

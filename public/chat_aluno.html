@@ -6,34 +6,42 @@
   <link rel="stylesheet" href="css/chat_aluno.css">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <div class="logo-icon">
-          <img src="images/image-removebg-preview 6.svg" alt="Logo">
-        </div>
-        <span class="logo-text">EDULINK</span>
+  <!-- Header (igual ao do tutor) -->
+  <header class="navbar">
+    <div class="container navbar-content">
+      <div class="navbar-left">
+        <a href="index.html" class="logo">
+          <img src="images/image-removebg-preview 6.svg" alt="Logo Edulink" class="logo-img">
+        </a>
       </div>
-      <div class="nav-container">
-        <nav>
-          <a href="index.html">Início</a>
-          <a href="#">Tutores</a>
-          <a href="#">Alunos</a>
-          <a href="#">Sobre nós</a>
-          <a href="#">Equipa</a>
-          <a href="#">Queres ser tutor?</a>
-        </nav>
-        <div class="profile-menu-container">
-          <div class="profile-icon">
-            <img src="images/icon.svg" alt="Ícone de Perfil">
-          </div>
+      <nav class="navbar-center">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#tutors">Tutores</a></li>
+          <li><a href="index.html#testimonials">Alunos</a></li>
+          <li><a href="index.html#about">Sobre nós</a></li>
+          <li><a href="index.html#team">Equipa</a></li>
+        </ul>
+      </nav>
+      <div class="navbar-right">
+        <div class="user-profile-dropdown">
+          <a href="#" class="icon-btn user-avatar-btn">
+            <img src="images/mariana.svg" alt="Avatar do Aluno" class="user-avatar-icon">
+            <i class="fas fa-chevron-down"></i>
+          </a>
           <div class="dropdown-menu">
-            <ul>
-              <li><a href="perfilaluno.html">Meu Perfil</a></li>
-              <li><a href="#">Minhas Aulas</a></li>
-              <li><a href="#">Configurações</a></li>
-              <li><a href="#">Sair</a></li>
-            </ul>
+            <div class="user-info-header">
+              <img src="images/mariana.svg" alt="Foto de Perfil de Beatriz Sousa" class="header-profile-pic">
+              <span class="header-username">Beatriz Sousa</span>
+            </div>
+            <hr class="dropdown-separator">
+            <div class="dropdown-links">
+              <a href="perfilaluno.html"><img src="images/icon.svg" alt=""> Perfil</a>
+              <a href="procurartutor.html"><img src="images/notificacoes.png" alt=""> Procurar Tutor</a>
+              <a href="agenda_aluno.html"><img src="images/calendario.png" alt=""> Agenda</a>
+              <a href="chat_aluno.html"><img src="images/chat.png" alt=""> Chat</a>
+              <a href="entrar.html"><img src="images/sair.png" alt=""> Sair</a>
+            </div>
           </div>
         </div>
       </div>
@@ -45,9 +53,11 @@
       <div class="messages-title">Mensagens</div>
       <ul class="contacts">
         <!-- A lista de tutores com os quais o aluno trocou mensagens -->
-        <li class="contact selected" data-room="chat_123_456" data-name="Prof. João Silva">
-          <div class="avatar"><!-- avatar tutor --></div>
-          <span>Prof. João Silva</span>
+        <li class="contact selected" data-room="chat_123_456" data-name="Beatriz Silva">
+          <div class="avatar"><!-- avatar tutor -->
+            <img src="images/beatriz.svg" alt="Avatar de Beatriz Silva">
+          </div>
+          <span>Beatriz Silva</span>
         </li>
         <!-- Podem adicionar mais tutors aqui -->
       </ul>
@@ -56,9 +66,9 @@
 
     <section class="chat">
       <div class="chat-header">
-        <img src="https://via.placeholder.com/80" alt="Avatar" class="chat-avatar">
+        <img src="images/beatriz.svg" alt="Avatar" class="chat-avatar">
         <div class="chat-user-info">
-          <h2>Prof. João Silva</h2>
+          <h2>Beatriz Silva</h2>
           <p>Pronto para ajudar no que precisa!</p>
         </div>
       </div>
