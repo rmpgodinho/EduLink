@@ -1,0 +1,125 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agendar Sessão – EduLink</title>
+  <link rel="stylesheet" href="css/pagamento.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <img src="logo-placeholder.png" alt="EduLink Logo" class="logo"/>
+        <span class="site-title">EDULINK</span>
+      </div>
+      <nav class="main-nav">
+        <a href="#">Início</a>
+        <a href="#">Tutores</a>
+        <a href="#">Alunos</a>
+        <a href="#">Sobre nós</a>
+        <a href="#">Equipa</a>
+        <a href="#">Queres ser Tutor?</a>
+      </nav>
+      <div class="user-menu">
+        <span class="icon-user">👤</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="container">
+    <form id="booking-form">
+      <!-- 1. Informações do Tutor -->
+      <section class="card section-light">
+        <h2><span class="step">1</span> Informações do Tutor</h2>
+        <div class="tutor-info">
+          <div class="tutor-text">
+            <p><strong>Nome:</strong> <span id="tutor-name">Beatriz Sousa</span></p>
+            <p><strong>Aula:</strong> <span id="tutor-subject">O Renascimento</span></p>
+            <p><strong>Preço por sessão:</strong> <span id="tutor-price">5€</span></p>
+            <blockquote>
+              Sou apaixonada por História e acredito que entender o passado nos ajuda a
+              perceber melhor o mundo de hoje. Dou explicações de forma clara, com exemplos
+              práticos e adaptados a cada aluno, sempre com o objetivo de tornar a matéria
+              interessante e fácil de memorizar.
+            </blockquote>
+          </div>
+          <div class="tutor-photo">
+            <img src="tutor-photo.jpg" alt="Foto do Tutor">
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Informações da Sessão -->
+      <section class="card section-light">
+        <h2><span class="step">2</span> Informações da Sessão</h2>
+        <div class="session-fields">
+          <label>
+            Dia:
+            <input type="date" id="session-date" required>
+          </label>
+          <label>
+            Hora de início:
+            <input type="time" id="session-time" required>
+          </label>
+          <label>
+            Nº de horas da sessão:
+            <input type="number" id="session-hours" min="1" max="3" value="1" required>
+          </label>
+        </div>
+        <label class="description-label">
+          Descrição:
+          <textarea id="session-desc" placeholder="Faz uma breve descrição da matéria que tens dúvidas. Não precisas de ser muito específico..."></textarea>
+        </label>
+        <label class="description-label">
+          Email:
+          <input type="email" id="client-email" placeholder="teu.email@exemplo.com" required>
+        </label>
+      </section>
+
+      <!-- 3. Método de Pagamento -->
+      <section class="card section-light">
+        <h2><span class="step">3</span> Método de Pagamento</h2>
+        <div class="payment-methods">
+          <div class="payment-option" data-method="credit">
+            <img src="icon-cc.png" alt="Cartão de Crédito">
+            <span>Cartão de Crédito</span>
+          </div>
+          <div class="payment-option" data-method="mbway">
+            <img src="icon-mbway.png" alt="MB Way">
+            <span>MB Way</span>
+          </div>
+          <div class="payment-option" data-method="paypal">
+            <img src="icon-paypal.png" alt="Paypal">
+            <span>Paypal</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Resumo / Pagamento -->
+      <aside class="summary-card">
+        <h3>Resumo:</h3>
+        <p><strong>Tutor:</strong> <span id="sum-tutor-name">Beatriz Sousa</span></p>
+        <p><strong>Preço por sessão:</strong> <span id="sum-price">5€</span></p>
+        <p><strong>Nº de sessões:</strong> <span id="sum-hours">1</span></p>
+        <p><strong>Dia:</strong> <span id="sum-date">__/__/____</span></p>
+        <p><strong>Hora:</strong> <span id="sum-time">__:__</span></p>
+        <p><strong>Email:</strong> <span id="sum-email">—</span></p>
+        <hr>
+        <p class="total-label">Total:</p>
+        <p class="total-amount" id="sum-total">5,00€</p>
+        <button type="submit" class="btn-submit">Concluir</button>
+      </aside>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>Copyright © Edulink 2025</p>
+  </footer>
+
+  <script src="js/pagamento.js"></script>
+</body>
+</html>
