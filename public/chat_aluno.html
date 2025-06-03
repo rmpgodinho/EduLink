@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat – Edulink (Aluno)</title>
+  <link rel="stylesheet" href="css/chat_aluno.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="images/image-removebg-preview 6.svg" alt="Logo">
+        </div>
+        <span class="logo-text">EDULINK</span>
+      </div>
+      <div class="nav-container">
+        <nav>
+          <a href="index.html">Início</a>
+          <a href="#">Tutores</a>
+          <a href="#">Alunos</a>
+          <a href="#">Sobre nós</a>
+          <a href="#">Equipa</a>
+          <a href="#">Queres ser tutor?</a>
+        </nav>
+        <div class="profile-menu-container">
+          <div class="profile-icon">
+            <img src="images/icon.svg" alt="Ícone de Perfil">
+          </div>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="perfilaluno.html">Meu Perfil</a></li>
+              <li><a href="#">Minhas Aulas</a></li>
+              <li><a href="#">Configurações</a></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="chat-container">
+    <aside class="sidebar">
+      <div class="messages-title">Mensagens</div>
+      <ul class="contacts">
+        <!-- A lista de tutores com os quais o aluno trocou mensagens -->
+        <li class="contact selected" data-room="chat_123_456" data-name="Prof. João Silva">
+          <div class="avatar"><!-- avatar tutor --></div>
+          <span>Prof. João Silva</span>
+        </li>
+        <!-- Podem adicionar mais tutors aqui -->
+      </ul>
+      <div class="sidebar-footer">Copyright © Edulink 2025</div>
+    </aside>
+
+    <section class="chat">
+      <div class="chat-header">
+        <img src="https://via.placeholder.com/80" alt="Avatar" class="chat-avatar">
+        <div class="chat-user-info">
+          <h2>Prof. João Silva</h2>
+          <p>Pronto para ajudar no que precisa!</p>
+        </div>
+      </div>
+      <div class="chat-messages"></div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Escreva aqui a sua mensagem..."
+        />
+        <button id="send-button">➤</button>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    Copyright © Edulink 2025
+  </footer>
+
+  <!-- Incluir cliente Socket.IO -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/chat_aluno.js"></script>
+</body>
+</html>
