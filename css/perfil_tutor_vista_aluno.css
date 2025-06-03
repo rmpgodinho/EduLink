@@ -1,0 +1,792 @@
+/* Basic Resets & Global Styles */
+body {
+    font-family: Arial, sans-serif; /* Clean, readable sans-serif font */
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5; /* Light gray background for the page */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #D3D6C5; /* White background for the header */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky; /* Makes the navbar stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.navbar-content {
+    display: flex; /* Uses flexbox for horizontal alignment */
+    justify-content: space-between; /* Distributes items with space between them */
+    align-items: center; /* Vertically centers items */
+    max-width: 1200px; /* Garante que o conteúdo não se espalhe demais em telas muito grandes */
+    margin: 0 auto; /* Centraliza o conteúdo da navbar */
+    padding: 0 20px; /* Adiciona padding nas laterais para não encostar nas bordas da janela */
+
+}
+
+.navbar-left .logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007bff; /* Primary blue for branding */
+    text-decoration: none;
+    display: flex; /* Flexbox for icon and text alignment */
+    gap: 5px; /* Space between icon and text */
+}
+
+.navbar-left .logo i {
+    font-size: 1.4em; /* Larger icon */
+}
+
+.navbar-center ul {
+    list-style: none;
+    display: flex; /* Este é o crucial! */
+    gap: 50px;
+    align-items: center;
+    padding: 0;
+    margin-left: 30%; /* Pushes the center nav to the right */
+
+}
+
+.navbar-center ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #2E3B46; /* Dark grey for links */
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    white-space: nowrap; /* Add this line */
+
+}
+
+.navbar-center ul li a:hover {
+    color: #007bff; /* Changes color to primary blue on hover */
+}
+
+.navbar-right {
+    display: flex; /* Flexbox for icons and user profile */
+    align-items: center;
+    gap: 15px; /* Space between right-side elements */
+    position: relative; /* For dropdown positioning */
+}
+
+.navbar-right .icon-btn {
+    color: #2E3B46; /* Dark grey for icons */
+    font-size: 1.1em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.navbar-right .icon-btn:hover {
+    color: #007bff; /* Changes color to primary blue on hover */
+}
+
+.user-profile-dropdown {
+    position: relative; /* For dropdown positioning */
+}
+
+.user-avatar-btn {
+    display: flex; /* Flexbox for avatar and dropdown arrow */
+    align-items: center;
+    gap: 5px;
+}
+
+.user-avatar-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Makes the avatar circular */
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Positions it directly below the avatar */
+    right: 0;
+    background-color: #D3D6C5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    padding: 10px 0;
+    z-index: 100;
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-menu.show {
+    display: block; /* Shown when 'show' class is added by JS */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu .user-info-header {
+    display: flex;
+    gap: 10px;
+}
+
+
+.dropdown-menu .header-profile-pic {
+    width: 40px; /* Tamanho da imagem de perfil */
+    height: 40px;
+    margin-left: 5px;
+    object-fit: cover; /* Garante que a imagem preenche o espaço sem distorcer */
+}
+
+.dropdown-menu .header-username {
+    font-weight: bold;
+    color: #333;
+    margin-top: 13px;
+    font-size: 12px; /* Tamanho da fonte do nome de utilizador */
+}
+
+.dropdown-separator {
+    background-color: #2E3B46; /* Cor do separador */
+    width: 90%;
+    opacity: 100%;
+
+}
+
+.dropdown-menu a img {
+    width: 18px;  /* Diminua a largura da imagem para o tamanho desejado (ex: 18px) */
+    height: 18px; /* Diminua a altura da imagem para o tamanho desejado (mantenha o mesmo valor para proporção) */
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar ou distorcer */
+    flex-shrink: 0; /* Impede que a imagem encolha em layouts flexíveis */
+}
+
+
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Responsiveness for Navbar */
+@media (max-width: 992px) {
+    .navbar-center ul {
+        gap: 15px; /* Adjust spacing for tablet size */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: center; /* Centers items when wrapped */
+        gap: 15px;
+    }
+
+    .navbar-center ul {
+        width: 100%; /* Navigation takes full width */
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .navbar-right {
+        margin-top: 10px; /* Moves right icons below if content wraps */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-center ul {
+        flex-direction: column; /* Stacks navigation links vertically */
+        align-items: center;
+        gap: 10px;
+    }
+}
+/* User Profile Section */
+.user-profile-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center; /* Align items to the top for details */
+    padding: 30px;
+    padding-left: 20px; /* Padding left for better spacing */
+    max-width: 5000px; /* Limit width as in image */
+
+}
+
+.profile-main-info {
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 200px;
+    margin-right: 20px;
+    min-width: 150px; /* Por exemplo, a largura do avatar + padding */
+    padding-right: 0;
+    margin-left: 5%; /* Experimente com este valor (ex: 50px, 80px, 100px) */
+    display: flex;
+    flex-direction: column; /* Para empilhar a imagem e o nome um em cima do outro */
+    justify-content: center; /* Centraliza verticalmente os itens dentro deste contêiner */
+    align-items: center; /* Centraliza horizontalmente os itens dentro deste contêiner */
+
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 50px #2E3B46; /* Adicionar sombra ao redor do círculo */
+}
+
+.profile-avatar img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Ensures no extra space below the image */
+}
+
+.profile-name {
+    font-size: 25px;
+    color: #2C4066;
+    margin: 0;
+    line-height: 1.2; /* Pode ajustar para controlar a altura da caixa de texto */
+}
+
+.profile-divider {
+    width: 7px;
+    background-color: #2C4066;
+    height: 180px; /* Adjust height based on content */
+    margin-right: 5%; /* Adiciona um espaço à direita do divisor antes dos detalhes */
+    margin-left: 10%;
+}
+
+.profile-details {
+    flex-grow: 1; /* Allow details to take remaining space */
+    padding-left: 5px;
+    padding-right: 20px;
+    min-width: 250px; /* Exemplo: Defina uma largura mínima para o texto, para que ele não se comprima muito */
+    flex-basis: auto; /* Permite que o item decida seu próprio tamanho base */
+
+}
+
+.profile-details p {
+    margin-bottom: 8px;
+    color: #2E3B46;
+    font-size: 0.95em;
+    margin-top: 0; 
+}
+
+.profile-details p strong {
+    color: #333;
+}
+
+.profile-details .highlight {
+    background-color: #2C4066; /* Light blue background for highlight */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #D3D6C5;
+}
+
+.profile-history {
+    margin-top: 15px;
+    color: #666;
+    line-height: 1.5;
+    max-height: 90px; /* Limit height for history text */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    text-align: center; /* Justify text for better readability */
+    margin-left: 0; /* Garante que não haja margem esquerda indesejada */
+    margin-right: 0; /* Garante que não haja margem direita indesejada */
+
+}
+
+.profile-details .profile-history { /* Mais específico */
+    font-size: 0.8em;
+}
+
+
+.edit-profile-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #aabee4;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-left: 45%;
+}
+
+.edit-profile-link:hover {
+    color: #0056b3;
+}
+
+/* Section Headers (Aulas, Relatórios Semanais) */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0 40px;
+}
+
+.section-header hr {
+    width: 100%;
+    flex-grow: 1;
+    border: none;
+    border-top: 5px solid #AAB18E;
+    margin: 0;
+    margin-bottom: 40px; /* Adicione um espaço abaixo da linha, antes do título */
+
+}
+
+.section-header h2 {
+    font-size: 2em;
+    color: #2E3B46;
+    margin-top: 0; /* Zera margens padrão do h2 */
+    margin-bottom: 0;
+    font-style: normal;
+    font-family: Jost, sans-serif; /* Use a fonte Jost para o título */
+    
+
+}
+
+/* Seu CSS existente (com as correções que já fizemos) */
+
+/* Class Cards */
+.class-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.class-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    /* Remover padding-bottom aqui se o footer tiver seu próprio padding */
+    padding-left: 15px; /* Adiciona padding à esquerda */
+    padding-right: 15px; /* Adiciona padding à direita */
+    padding-top: 15px; /* Adiciona padding no topo do conteúdo, abaixo da imagem */
+    display: flex;
+    flex-direction: column;
+}
+
+.class-card img {
+    width: 100%;
+    height: 180px; /* Fixed height for images */
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px; /* Arredonda o canto inferior esquerdo da imagem */
+    border-bottom-right-radius: 8px; /* Arredonda o canto inferior direito da imagem */
+    margin-bottom: 10px;
+}
+
+
+.class-card h3 {
+    font-size: 1.2em;
+    color: #2E3B46;
+    padding: 5px 15px 5px; /* Manter este padding */
+    margin: 0;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Os parágrafos de tutor e avaliação precisam ser ajustados para ficarem dentro do footer */
+.class-card p {
+    font-size: 0.9em;
+    color: #2E3B46;
+    /* Remover padding aqui se já estiver no footer ou no tutor-rating-info */
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.class-card .category-text {
+    font-weight: 400;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+}
+
+
+.class-card .rating {
+    font-size: 0.9em;
+    /* Remover padding aqui, o padding será aplicado no .tutor-rating-info ou .class-card-footer */
+    color: #2E3B46;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.class-card .rating img {
+    height: 10px;
+    width: auto;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+/* Novo estilo para o container do rodapé */
+.class-card-footer {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    padding: 10px 15px; /* Adicionado padding lateral aqui para alinhar com o restante do conteúdo */
+    margin-top: auto; /* Empurra o rodapé para a parte inferior do card */
+    width: 100%; /* Garante que o footer ocupe a largura total disponível */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Estilos para agrupar Tutor e Avaliação */
+.class-card-footer .tutor-rating-info {
+    display: flex;
+    flex-direction: column; /* Coloca Tutor e Avaliação um abaixo do outro */
+    /* Talvez você queira ajustar o gap aqui se eles ficarem muito colados */
+}
+
+.class-card-footer .tutor-rating-info p,
+.class-card-footer .tutor-rating-info .rating {
+    margin: 0; /* Remove margens padrão que podem afetar o espaçamento */
+    padding: 0; /* Remove padding padrão, o padding virá do footer */
+}
+
+
+.class-card .btn-buy {
+    background-color: #AAB18E;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Remover align-self: flex-start; ou margin: ... aqui, pois o flexbox do footer já cuida do alinhamento */
+}
+
+.class-card .btn-buy:hover {
+    background-color: #2e3b46;
+    color: #fff;
+}
+
+.ver-mais-container {
+    text-align: center; /* Centraliza o conteúdo inline/inline-block dentro dele */
+    margin-top: 30px; /* Adiciona um espaço acima do link, se desejar */
+}
+
+/* Report Cards */
+.reviews-section {
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Add this to center the block element */
+    max-width: 1200px; /* You can re-add max-width if needed for content constraint */
+}
+
+.reviews-section h1 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 80px;
+    font-weight: 600;
+}
+
+.review-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.review-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Increased vertical offset and blur, slightly darker color */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.review-text {
+    font-size: 1.1em;
+    color: #ACACAC;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    font-family: Roboto, sans-serif; /* Use a font like Roboto for readability */
+    font-style: regular; /* Regular font style for the review text */
+    font-weight: 400; /* Normal weight for the review text */
+
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reviewer-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--accent-color);
+}
+
+.reviewer-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically if space allows */
+
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: #353535;
+    font-size: 1em;
+    border-bottom: 1px dashed var(--secondary-text-color); /* Dashed line */
+    padding-bottom: 3px; /* Space between name and line */
+    margin-bottom: 3px; /* Space between line and class-taught */
+    line-height: 1.2; /* Adjust line height to control spacing if needed */
+    width: fit-content; /* Make the border only as wide as the content */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+.class-taught {
+    font-size: 0.95em;
+    color: #2E3B46;
+    font-weight: 500;
+    font-family: Poppins, sans-serif; /* Use a font like Poppins for readability */
+}
+
+.review-divider {
+    border-top: 1px dashed #ccc; /* Or use a variable like var(--secondary-text-color) */
+    margin: 15px 0; /* Space above and below the line */
+    width: 100%; /* Ensure it spans the full width of the card's content area */
+}
+
+
+.star-rating {
+    margin-top: 15px;
+    display: flex;
+}
+
+.star-rating img {
+    width: 80px; /* Set width for star images */
+    height: 20px; /* Set height for star images */
+    object-fit: contain; /* Ensure the image fits within the bounds */
+}
+
+.ver-mais-link {
+    display: inline-block;
+    text-decoration: underline; /* Add underline */
+    color: #aabee4; /* Set to a light grey color as seen in the image */
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 0; /* Remove padding if it's acting like a button */
+    border-radius: 0; /* Remove border-radius if it's acting like a button */
+    transition: color 0.3s ease; /* Only transition color on hover, no background change */
+}
+
+.ver-mais-link:hover {
+    color: #0056b3;
+    background-color: transparent; /* Ensure no background change on hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #D3D6C5; /* Match body background for consistency */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.90em;
+    color: #2E3B46;
+    border-top: 1px solid #eee; /* Subtle top border */
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-divider {
+        display: none; /* Hide vertical divider on smaller screens */
+    }
+
+    .profile-details {
+        padding-left: 0;
+    }
+
+    .profile-main-info {
+        width: auto;
+    }
+
+    .navbar-center ul {
+        gap: 15px;
+    }
+
+    .class-cards,
+    .report-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar-center ul {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .section-header h2 {
+        font-size: 1.8em;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .class-card h3, .report-card h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-center ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5em;
+    }
+
+    .class-cards,
+    .report-cards {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .class-card .btn-view-more,
+    .report-card .btn-view-more {
+        width: auto;
+        max-width: unset; /* Remove max-width on mobile */
+        display: block; /* Make button block level */
+        text-align: center;
+    }
+
+@media (max-width: 768px) {
+            .reviews-section h1 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+
+            .review-cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                margin: 0 auto;
+                max-width: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reviews-section {
+                padding: 30px 15px;
+            }
+
+            .reviews-section h1 {
+                font-size: 1.8em;
+            }
+
+            .review-card {
+                padding: 20px;
+                min-height: unset;
+            }
+
+            .review-text {
+                font-size: 1em;
+            }
+
+            .reviewer-info img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .reviewer-name {
+                font-size: 0.9em;
+            }
+
+            .class-taught {
+                font-size: 0.85em;
+            }
+
+            .star-rating img {
+                width: 18px;
+                height: 18px;
+            }
+
+            .ver-mais-link {
+                font-size: 1em;
+            }
+        }
+}

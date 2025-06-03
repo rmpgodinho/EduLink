@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Profile - Edulink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset/Normalize */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #007bff; /* Accent color */
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #007bff;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .icon-btn:hover {
+            color: #007bff;
+        }
+
+        .user-profile {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #ddd; /* Placeholder for user avatar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            color: #777;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Tutor Profile Section */
+        .tutor-profile-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .tutor-profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #007bff;
+            flex-shrink: 0;
+        }
+
+        .tutor-profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tutor-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tutor-name {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .tutor-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .tutor-detail-item strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .history-tag {
+            background-color: #e0f2f7; /* Light blue */
+            color: #007bff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .tutor-bio {
+            font-size: 15px;
+            color: #666;
+            margin-top: 20px;
+            max-width: 700px;
+        }
+
+        /* Section Headings */
+        .section-heading {
+            font-size: 26px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Class Cards Section */
+        .class-cards-container,
+        .review-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .class-card,
+        .review-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .class-card:hover,
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .class-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 15px;
+        }
+
+        .star {
+            color: #ffc107; /* Gold for filled stars */
+            font-size: 18px;
+        }
+
+        .star.unfilled {
+            color: #e0e0e0; /* Grey for unfilled stars */
+        }
+
+        .buy-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .buy-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Review Cards Styling */
+        .review-card .card-content {
+            min-height: 180px; /* Ensure consistent height for reviews */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-card .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .review-card .reviewer-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .review-card .review-class {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        /* View More Button */
+        .view-more-btn {
+            display: block;
+            margin: 20px auto 40px;
+            background-color: #eee;
+            color: #007bff;
+            padding: 12px 25px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            width: fit-content;
+        }
+
+        .view-more-btn:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .tutor-profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .tutor-profile-img {
+                margin: 0 auto;
+            }
+            .tutor-info {
+                align-items: center;
+            }
+            .tutor-details {
+                justify-content: center;
+            }
+            .tutor-bio {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            .nav-menu ul {
+                display: none; /* Hide full menu on smaller screens, can be replaced with hamburger icon */
+            }
+            .header-left {
+                gap: 15px;
+            }
+            .header-right {
+                gap: 15px;
+            }
+            main {
+                padding: 20px 15px;
+                gap: 30px;
+            }
+            .tutor-profile-section {
+                padding: 20px;
+            }
+            .section-heading {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .class-cards-container,
+            .review-cards-container {
+                grid-template-columns: 1fr; /* Stack cards vertically */
+            }
+            .class-card-img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+            .tutor-profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .tutor-name {
+                font-size: 24px;
+            }
+            .tutor-details, .tutor-bio, .card-content p {
+                font-size: 14px;
+            }
+            .buy-btn, .view-more-btn {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+            .star {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">EDULINK</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Tutores</a></li>
+                    <li><a href="#">Alunos</a></li>
+                    <li><a href="#">Saiba mais</a></li>
+                    <li><a href="#">Equipa</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button class="icon-btn" aria-label="Search">&#128269;</button> <div class="user-profile">&#128100;</div> </div>
+    </header>
+
+    <main>
+        <section class="tutor-profile-section">
+            <div class="tutor-profile-img">
+                <img src="https://picsum.photos/id/237/300/300" alt="Beatriz Sousa Profile Picture">
+            </div>
+            <div class="tutor-info">
+                <h1 class="tutor-name">Beatriz Sousa</h1>
+                <div class="tutor-details">
+                    <p class="tutor-detail-item"><strong>Idade:</strong> 32 anos</p>
+                    <p class="tutor-detail-item"><strong>Nível de Ensino:</strong> Superior, Básico, Secundário</p>
+                    <p class="tutor-detail-item"><strong>Área Profissional:</strong> <span class="history-tag">História</span></p>
+                </div>
+                <p class="tutor-bio">
+                    Sou apaixonada por História e acredito que entender o passado nos ajuda a perceber o futuro. Minhas aulas são dinâmicas e interativas, com material didático adaptado a cada aluno, sempre com o objetivo de tornar o ensino acessível e fácil de assimilar.
+                </p>
+            </div>
+        </section>
+
+        <section class="classes-section">
+            <h2 class="section-heading">Aulas</h2>
+            <div class="class-cards-container">
+                <div class="class-card">
+                    <img src="https://picsum.photos/id/23/400/200" alt="A Guerra Fria" class="class-card-img">
+                    <div class="card-content">
+                        <h3>A Guerra Fria</h3>
+                        <p>Tutor: Beatriz Sousa</p>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star unfilled">&#9733;</span>
+                        </div>
+                        <button class="buy-btn">Comprar</button>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/id/24/400/200" alt="O Renascimento" class="class-card-img">
+                    <div class="card-content">
+                        <h3>O Renascimento</h3>
+                        <p>Tutor: Beatriz Sousa</p>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                        <button class="buy-btn">Comprar</button>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/id/25/400/200" alt="A 1ª Guerra Mundial" class="class-card-img">
+                    <div class="card-content">
+                        <h3>A 1ª Guerra Mundial</h3>
+                        <p>Tutor: Beatriz Sousa</p>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star unfilled">&#9733;</span>
+                        </div>
+                        <button class="buy-btn">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn">Ver Mais</button>
+        </section>
+
+        <section class="reviews-section">
+            <h2 class="section-heading">Reviews Deste Tutor</h2>
+            <div class="review-cards-container">
+                <div class="review-card">
+                    <div class="card-content">
+                        <p class="review-text">"A explicação tem bases confirmadas e me ajuda a entender a história e a nova organização dos seres. Minhas aulas tem sido útil pra melhorar o meu aprendizado."</p>
+                        <p class="reviewer-name">André Toledo</p>
+                        <p class="review-class">Aula: A Guerra Fria</p>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star unfilled">&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="card-content">
+                        <p class="review-text">"A Teresa é super clara e explica o tema de forma completa, com exemplos de cultura. As aulas são bem organizadas e dão foco – o que já é muito interessante e ajuda no aprendizado."</p>
+                        <p class="reviewer-name">Francisca Mello</p>
+                        <p class="review-class">Aula: A 1ª Guerra Mundial</p>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="card-content">
+                        <p class="review-text">"As aulas dão o tempo para a leitura e revisão do material, o que significa que o aluno consegue entender o conteúdo do que está sendo ensinado. Recomendo muito!"</p>
+                        <p class="reviewer-name">Mariana Gonçalves</p>
+                        <p class="review-class">Aula: O Renascimento</p>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star unfilled">&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn">Ver Mais</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright © Edulink 2005</p>
+    </footer>
+</body>
+</html>
