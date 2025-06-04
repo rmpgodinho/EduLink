@@ -13,7 +13,7 @@ const sendBtn      = document.getElementById("send-button");
 // Informação do utilizador "tutor"
 const currentUser = {
   userType: "tutor",
-  userName: "Prof. João Silva",
+  userName: "Beatriz Silva",
   tutorID: 123
 };
 

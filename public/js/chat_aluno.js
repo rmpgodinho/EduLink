@@ -13,7 +13,7 @@ const sendBtn      = document.getElementById("send-button");
 // 2. Informação do utilizador "aluno" (poderiam vir de uma API real ou sessão)
 const currentUser = {
   userType: "aluno",
-  userName: "Beatriz Sousa",
+  userName: "Mariana Gonçalves",
   // Supondo que tutorID = 123 e alunoID = 456 (estes valores viriam do sistema real)
   alunoID: 456
 };
