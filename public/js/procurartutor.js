@@ -11,7 +11,7 @@ var accounts = [
     "especializacao": "História",
     "avaliacao": 5,
     "preco":50,
-    "image": "images/leandro.svg"
+    "image": "images/Leandro.svg"
   },
   {
     "nome": "Gabriela Costa",
